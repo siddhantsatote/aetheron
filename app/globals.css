@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cyan: #00f5ff;
+  --color-purple: #8b5cf6;
+  --color-magenta: #ff00c8;
+  --color-navy-900: #0a0e1a;
+  --color-navy-800: #0d1526;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-navy-900);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy-900);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Neon text glow utilities */
+.neon-cyan {
+  color: #00f5ff;
+  text-shadow:
+    0 0 10px #00f5ff,
+    0 0 20px #00f5ff,
+    0 0 40px #00f5ff;
+}
+.neon-purple {
+  color: #8b5cf6;
+  text-shadow:
+    0 0 10px #8b5cf6,
+    0 0 20px #8b5cf6,
+    0 0 40px #8b5cf6;
+}
+.neon-magenta {
+  color: #ff00c8;
+  text-shadow:
+    0 0 10px #ff00c8,
+    0 0 20px #ff00c8,
+    0 0 40px #ff00c8;
+}
+
+/* Neon border glow utilities */
+.glow-border-cyan {
+  box-shadow:
+    0 0 15px rgba(0, 245, 255, 0.4),
+    inset 0 0 15px rgba(0, 245, 255, 0.05);
+  border: 1px solid rgba(0, 245, 255, 0.4);
+}
+.glow-border-purple {
+  box-shadow:
+    0 0 15px rgba(139, 92, 246, 0.4),
+    inset 0 0 15px rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+.glow-border-magenta {
+  box-shadow:
+    0 0 15px rgba(255, 0, 200, 0.4),
+    inset 0 0 15px rgba(255, 0, 200, 0.05);
+  border: 1px solid rgba(255, 0, 200, 0.4);
+}
+
+/* Glassmorphism */
+.glassmorphism {
+  background: rgba(13, 21, 38, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+/* Glow button hover */
+.glow-btn-cyan {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.15),
+    rgba(0, 245, 255, 0.05)
+  );
+  border: 1px solid rgba(0, 245, 255, 0.5);
+  transition: all 0.3s ease;
+}
+.glow-btn-cyan:hover {
+  box-shadow:
+    0 0 25px rgba(0, 245, 255, 0.6),
+    0 0 50px rgba(0, 245, 255, 0.3);
+  border-color: #00f5ff;
+}
+
+.glow-btn-purple {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.15),
+    rgba(139, 92, 246, 0.05)
+  );
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  transition: all 0.3s ease;
+}
+.glow-btn-purple:hover {
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.6),
+    0 0 50px rgba(139, 92, 246, 0.3);
+  border-color: #8b5cf6;
+}
+
+.glow-btn-magenta {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 200, 0.15),
+    rgba(255, 0, 200, 0.05)
+  );
+  border: 1px solid rgba(255, 0, 200, 0.5);
+  transition: all 0.3s ease;
+}
+.glow-btn-magenta:hover {
+  box-shadow:
+    0 0 25px rgba(255, 0, 200, 0.6),
+    0 0 50px rgba(255, 0, 200, 0.3);
+  border-color: #ff00c8;
+}
+
+/* Input focus glow */
+.input-glow:focus {
+  outline: none;
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+}
+
+.input-glow-cyan:focus {
+  border-color: #00f5ff;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+}
+.input-glow-purple:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+.input-glow-magenta:focus {
+  border-color: #ff00c8;
+  box-shadow: 0 0 10px rgba(255, 0, 200, 0.3);
+}
+
+/* Error state */
+.input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Grid background pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Pulse animation for date badges */
+@keyframes neon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Success checkmark animation */
+@keyframes draw-check {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.animate-check {
+  stroke-dasharray: 100;
+  animation: draw-check 0.6s ease forwards;
+}
+
+/* ===== PILL NAVBAR ===== */
+.pill-nav {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* ===== HERO TITLE GLOW (no background light) ===== */
+.hero-title-glow {
+  color: #00f5ff;
+  text-shadow:
+    0 0 10px rgba(0, 245, 255, 0.5),
+    0 0 20px rgba(0, 245, 255, 0.25);
+}
+
+/* ===== REGISTER NOW BUTTON (HackByte style) ===== */
+.register-now-btn {
+  background: linear-gradient(135deg, #00f5ff 0%, #00c4cc 50%, #0098a3 100%);
+  color: #0a0e1a;
+  box-shadow:
+    0 0 20px rgba(0, 245, 255, 0.4),
+    0 0 50px rgba(0, 245, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: none;
+}
+.register-now-btn:hover {
+  box-shadow:
+    0 0 30px rgba(0, 245, 255, 0.7),
+    0 0 60px rgba(0, 245, 255, 0.3),
+    0 0 100px rgba(0, 245, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #33f7ff 0%, #00d4dd 50%, #00b0ba 100%);
+}
