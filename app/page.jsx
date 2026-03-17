@@ -90,10 +90,10 @@ export default function Home() {
       <ParticleBackground />
 
       {/* ===== HERO — FULL VIEWPORT ===== */}
-      <section className="relative z-10 h-[100vh] w-full overflow-hidden flex flex-col md:block">
+      <section className="relative z-10 h-dvh w-full overflow-hidden flex flex-col md:block">
 
         {/* ===== MOBILE LAYOUT (stacked) ===== */}
-        <div className="flex flex-col items-center px-6 pt-24 pb-6 md:hidden h-[100vh]">
+        <div className="flex flex-col items-center px-6 pt-20 pb-4 md:hidden h-dvh">
           {/* Theme text */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

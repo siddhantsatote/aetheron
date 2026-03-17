@@ -28,11 +28,11 @@ export default function Navbar() {
       scrolled ? "bg-[#0a0e1a]/95 backdrop-blur-md border-b border-cyan-500/10" : ""
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo — left */}
           <Link href="/" className="flex items-center gap-3 group">
-            <img src="/logo.png" alt="AETHERON" className="h-8 w-8 object-contain" />
-            <span className="font-orbitron text-lg font-bold text-neon-cyan tracking-wider">
+            <img src="/logo.png" alt="AETHERON" className="h-10 w-10 object-contain" />
+            <span className="font-orbitron text-xl font-bold text-neon-cyan tracking-wider">
               AETHERON
             </span>
           </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-medium text-sm tracking-wide transition-all duration-300 hover:text-neon-cyan ${
+                className={`font-medium text-base tracking-wide transition-all duration-300 hover:text-neon-cyan ${
                   pathname === item.href ? "text-neon-cyan" : "text-slate-400"
                 }`}
               >
@@ -52,7 +52,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/register"
-              className="glow-btn-cyan px-4 py-2 rounded-lg font-orbitron text-xs text-neon-cyan tracking-wider"
+              className="glow-btn-cyan px-5 py-2.5 rounded-lg font-orbitron text-sm text-neon-cyan tracking-wider"
             >
               REGISTER
             </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
             className="md:hidden text-slate-300 hover:text-neon-cyan transition-colors"
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {menuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
