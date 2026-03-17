@@ -25,11 +25,8 @@ export async function POST(request) {
           college: body.college.trim(),
           team_name: body.team_name.trim(),
           team_size: body.team_size,
-          github_url: body.github_url?.trim() || null,
-          tech_stack: body.tech_stack?.trim() || null,
-          project_idea: body.project_idea?.trim() || null,
+          project_idea: body.problem_statement?.trim() || null,
           team_members: body.team_members?.trim() || null,
-          tshirt_size: body.tshirt_size,
         },
       ])
       .select();

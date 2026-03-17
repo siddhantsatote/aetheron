@@ -9,7 +9,6 @@ import GlowButton from "@/components/GlowButton";
 import useRegistration from "@/hooks/useRegistration";
 
 const teamSizes = ["2", "3", "4"];
-const tshirtSizes = ["S", "M", "L", "XL", "XXL"];
 
 export default function HackathonForm() {
   const { submit, loading, success, error, fieldErrors, reset } =
@@ -25,10 +24,7 @@ export default function HackathonForm() {
     member_2: "",
     member_3: "",
     member_4: "",
-    github_url: "",
-    tech_stack: "",
-    project_idea: "",
-    tshirt_size: "",
+    problem_statement: "",
     agree: false,
   });
 
@@ -295,52 +291,36 @@ export default function HackathonForm() {
               />
             </div>
 
-            <FormInput
-              label="GitHub Profile URL"
-              name="github_url"
-              type="url"
-              value={form.github_url}
-              onChange={handleChange}
-              error={fieldErrors.github_url}
-              placeholder="https://github.com/username"
-              color="purple"
-              index={10}
-            />
-            <FormInput
-              label="Tech Stack"
-              name="tech_stack"
-              value={form.tech_stack}
-              onChange={handleChange}
-              error={fieldErrors.tech_stack}
-              placeholder="React, Node.js, Python..."
-              color="purple"
-              index={11}
-            />
-            <FormInput
-              label="Project Idea Brief"
-              name="project_idea"
-              type="textarea"
-              value={form.project_idea}
-              onChange={handleChange}
-              error={fieldErrors.project_idea}
-              placeholder="Briefly describe your project idea (optional)..."
-              color="purple"
-              rows={3}
-              index={12}
-            />
-            <FormInput
-              label="T-Shirt Size"
-              name="tshirt_size"
-              type="select"
-              value={form.tshirt_size}
-              onChange={handleChange}
-              error={fieldErrors.tshirt_size}
-              placeholder="Select size"
-              options={tshirtSizes}
-              required
-              color="purple"
-              index={13}
-            />
+            <div className="space-y-2">
+              <FormInput
+                label="Selected Problem Statement"
+                name="problem_statement"
+                type="select"
+                value={form.problem_statement}
+                onChange={handleChange}
+                error={fieldErrors.problem_statement}
+                placeholder="Select a problem statement"
+                options={[
+                  "Smart Healthcare Assistant",
+                  "Sustainable Campus Tracker",
+                  "Peer-to-Peer Learning Platform",
+                  "Micro-Finance for Students",
+                  "Smart Traffic Management",
+                  "Mental Health & Wellness App",
+                ]}
+                required
+                color="purple"
+                index={10}
+              />
+              <Link
+                href="/problems"
+                target="_blank"
+                className="inline-flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors underline underline-offset-4"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                View Problem Statements
+              </Link>
+            </div>
 
             <FormInput
               type="checkbox"

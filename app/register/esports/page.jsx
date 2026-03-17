@@ -9,7 +9,6 @@ import GlowButton from "@/components/GlowButton";
 import useRegistration from "@/hooks/useRegistration";
 
 const deviceTypes = ["Android", "iOS"];
-const participationTypes = ["Solo", "Squad"];
 
 export default function EsportsForm() {
   const { submit, loading, success, error, fieldErrors, reset } =
@@ -22,7 +21,6 @@ export default function EsportsForm() {
     bgmi_uid: "",
     ign: "",
     device_type: "",
-    participation_type: "",
     team_name: "",
     squad_member_1: "",
     squad_member_2: "",
@@ -42,20 +40,11 @@ export default function EsportsForm() {
     e.preventDefault();
     if (!form.agree) return;
     const { agree, ...data } = form;
-    if (data.participation_type !== "Squad") {
-      data.team_name = "";
-      data.squad_member_1 = "";
-      data.squad_member_2 = "";
-      data.squad_member_3 = "";
-    }
+    data.participation_type = "Squad";
     // Combine squad members into squad_igns for backend
-    if (data.participation_type === "Squad") {
-      data.squad_igns = [data.squad_member_1, data.squad_member_2, data.squad_member_3]
-        .filter(Boolean)
-        .join(", ");
-    } else {
-      data.squad_igns = "";
-    }
+    data.squad_igns = [data.squad_member_1, data.squad_member_2, data.squad_member_3]
+      .filter(Boolean)
+      .join(", ");
     delete data.squad_member_1;
     delete data.squad_member_2;
     delete data.squad_member_3;
@@ -275,72 +264,51 @@ export default function EsportsForm() {
                 color="magenta"
                 index={6}
               />
-              <FormInput
-                label="Solo or Squad"
-                name="participation_type"
-                type="select"
-                value={form.participation_type}
-                onChange={handleChange}
-                error={fieldErrors.participation_type}
-                placeholder="Select type"
-                options={participationTypes}
-                required
-                color="magenta"
-                index={7}
-              />
             </div>
 
-            {form.participation_type === "Squad" && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                className="space-y-5"
-              >
-                <FormInput
-                  label="Team Name"
-                  name="team_name"
-                  value={form.team_name}
-                  onChange={handleChange}
-                  error={fieldErrors.team_name}
-                  placeholder="Shadow Squad"
-                  required
-                  color="magenta"
-                  index={8}
-                />
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                  <FormInput
-                    label="Member 1 Name"
-                    name="squad_member_1"
-                    value={form.squad_member_1}
-                    onChange={handleChange}
-                    placeholder="Player name"
-                    required
-                    color="magenta"
-                    index={9}
-                  />
-                  <FormInput
-                    label="Member 2 Name"
-                    name="squad_member_2"
-                    value={form.squad_member_2}
-                    onChange={handleChange}
-                    placeholder="Player name"
-                    required
-                    color="magenta"
-                    index={10}
-                  />
-                  <FormInput
-                    label="Member 3 Name"
-                    name="squad_member_3"
-                    value={form.squad_member_3}
-                    onChange={handleChange}
-                    placeholder="Player name"
-                    required
-                    color="magenta"
-                    index={11}
-                  />
-                </div>
-              </motion.div>
-            )}
+            <FormInput
+              label="Team Name"
+              name="team_name"
+              value={form.team_name}
+              onChange={handleChange}
+              error={fieldErrors.team_name}
+              placeholder="Shadow Squad"
+              required
+              color="magenta"
+              index={7}
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+              <FormInput
+                label="Member 1 Name"
+                name="squad_member_1"
+                value={form.squad_member_1}
+                onChange={handleChange}
+                placeholder="Player name"
+                required
+                color="magenta"
+                index={8}
+              />
+              <FormInput
+                label="Member 2 Name"
+                name="squad_member_2"
+                value={form.squad_member_2}
+                onChange={handleChange}
+                placeholder="Player name"
+                required
+                color="magenta"
+                index={9}
+              />
+              <FormInput
+                label="Member 3 Name"
+                name="squad_member_3"
+                value={form.squad_member_3}
+                onChange={handleChange}
+                placeholder="Player name"
+                required
+                color="magenta"
+                index={10}
+              />
+            </div>
 
             <FormInput
               type="checkbox"

@@ -28,15 +28,12 @@ CREATE TABLE hackathon_registrations (
   college TEXT NOT NULL,
   team_name TEXT NOT NULL,
   team_size INTEGER NOT NULL,
-  github_url TEXT,
-  tech_stack TEXT,
   project_idea TEXT,
   team_members TEXT,
-  tshirt_size TEXT NOT NULL,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- eSports registrations
+-- eSports registrations (Squad only)
 CREATE TABLE esports_registrations (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   full_name TEXT NOT NULL,
@@ -46,8 +43,8 @@ CREATE TABLE esports_registrations (
   bgmi_uid TEXT NOT NULL,
   ign TEXT NOT NULL,
   device_type TEXT NOT NULL,
-  participation_type TEXT NOT NULL,
-  team_name TEXT,
+  participation_type TEXT NOT NULL DEFAULT 'Squad',
+  team_name TEXT NOT NULL,
   squad_igns TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );

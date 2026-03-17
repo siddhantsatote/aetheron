@@ -8,7 +8,6 @@ import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
 import useRegistration from "@/hooks/useRegistration";
 
-const domains = ["Healthcare", "Education", "Environment", "FinTech", "Other"];
 const teamSizes = ["1", "2", "3", "4"];
 
 export default function IdeathonForm() {
@@ -320,12 +319,11 @@ export default function IdeathonForm() {
             <FormInput
               label="Domain / Track"
               name="domain"
-              type="select"
+              type="text"
               value={form.domain}
               onChange={handleChange}
               error={fieldErrors.domain}
-              placeholder="Select domain"
-              options={domains}
+              placeholder="e.g. Healthcare, FinTech, AI/ML, Education..."
               required
               color="cyan"
               index={12}
