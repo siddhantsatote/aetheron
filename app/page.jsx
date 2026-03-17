@@ -99,12 +99,12 @@ export default function Home() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="self-start mb-8"
+            className="self-start mb-4"
           >
-            <h3 className="font-orbitron text-base font-bold text-white tracking-wide">
+            <h3 className="font-orbitron text-lg font-bold text-white tracking-wide">
               Our Theme
             </h3>
-            <p className="text-slate-400 text-sm italic mt-1">
+            <p className="text-slate-400 text-base italic mt-1">
               Where Ideas Ignite. Code Competes. Champions Rise.
             </p>
           </motion.div>
@@ -114,12 +114,12 @@ export default function Home() {
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.1 }}
-            className="flex-1 flex items-center justify-center"
+            className="flex-1 flex items-center justify-center py-2"
           >
             <motion.img
               src="/logo.png"
               alt="AETHERON"
-              className="w-48 h-48 sm:w-56 sm:h-56 object-contain"
+              className="w-44 h-44 sm:w-52 sm:h-52 object-contain"
               initial={{ y: -15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -133,11 +133,11 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="self-start mb-4"
           >
-            <p className="font-orbitron text-lg font-extrabold text-white italic">When:</p>
-            <p className="font-orbitron text-xl font-black text-white mt-1 tracking-wide">3-Day Event</p>
+            <p className="font-orbitron text-xl font-extrabold text-white italic">When:</p>
+            <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">3-Day Event</p>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-neon-cyan text-base">📍</span>
-              <p className="font-orbitron text-xs font-semibold text-slate-300 italic">Your College Campus</p>
+              <span className="text-neon-cyan text-lg">📍</span>
+              <p className="font-orbitron text-sm font-semibold text-slate-300 italic">Your College Campus</p>
             </div>
             <div className="flex gap-2 mt-3">
               {[
@@ -145,9 +145,9 @@ export default function Home() {
                 { label: "Day 2", sub: "Hackathon", cls: "glow-border-purple text-neon-purple" },
                 { label: "Day 3", sub: "BGMI", cls: "glow-border-magenta text-neon-magenta" },
               ].map((d, i) => (
-                <div key={i} className={`${d.cls} rounded-lg px-2.5 py-1 bg-navy-900/70 backdrop-blur-sm`}>
-                  <p className="font-orbitron text-[9px] font-bold tracking-wider">{d.label}</p>
-                  <p className="text-slate-400 text-[9px]">{d.sub}</p>
+                <div key={i} className={`${d.cls} rounded-lg px-3 py-1.5 bg-navy-900/70 backdrop-blur-sm`}>
+                  <p className="font-orbitron text-[11px] font-bold tracking-wider">{d.label}</p>
+                  <p className="text-slate-400 text-[10px]">{d.sub}</p>
                 </div>
               ))}
             </div>
@@ -162,7 +162,7 @@ export default function Home() {
           >
             <Link
               href="/register"
-              className="register-now-btn block text-center font-orbitron text-sm font-extrabold tracking-widest px-10 py-4 rounded-full transition-transform hover:scale-105 active:scale-95"
+              className="register-now-btn block text-center font-orbitron text-base font-extrabold tracking-widest px-10 py-4 rounded-full transition-transform hover:scale-105 active:scale-95"
             >
               REGISTER NOW
             </Link>
