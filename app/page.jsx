@@ -90,10 +90,10 @@ export default function Home() {
       <ParticleBackground />
 
       {/* ===== HERO — FULL VIEWPORT ===== */}
-      <section className="relative z-10 h-screen w-full overflow-hidden flex flex-col md:block">
+      <section className="relative z-10 h-[100vh] w-full overflow-hidden flex flex-col md:block">
 
         {/* ===== MOBILE LAYOUT (stacked) ===== */}
-        <div className="flex flex-col items-center px-6 pt-24 pb-6 md:hidden flex-1">
+        <div className="flex flex-col items-center px-6 pt-24 pb-6 md:hidden h-[100vh]">
           {/* Theme text */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -119,7 +119,7 @@ export default function Home() {
             <motion.img
               src="/logo.png"
               alt="AETHERON"
-              className="w-44 h-44 sm:w-52 sm:h-52 object-contain"
+              className="w-56 h-56 sm:w-64 sm:h-64 object-contain"
               initial={{ y: -15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
