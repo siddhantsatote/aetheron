@@ -25,6 +25,7 @@ export async function POST(request) {
           college: body.college.trim(),
           team_name: body.team_name.trim(),
           team_size: body.team_size,
+          girl_member_confirm: body.girl_member_confirm,
           project_idea: body.problem_statement?.trim() || null,
           team_members: body.team_members?.trim() || null,
         },

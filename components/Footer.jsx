@@ -179,7 +179,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t border-slate-800 text-center">
           <p className="text-slate-500 text-xs">
-            © 2026 AETHERON Tech Fest. All rights reserved. Built with 💜
+            © 2026 AETHERON Tech Fest. All rights reserved. Built with 💙
           </p>
         </div>
       </div>

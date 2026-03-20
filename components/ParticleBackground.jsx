@@ -13,6 +13,11 @@ export default function ParticleBackground() {
     let particles = [];
     const PARTICLE_COUNT = 80;
     const CONNECTION_DIST = 150;
+    const PALETTE = [
+      [53, 243, 255],
+      [63, 157, 255],
+      [116, 173, 255],
+    ];
 
     function resize() {
       canvas.width = window.innerWidth;
@@ -28,6 +33,7 @@ export default function ParticleBackground() {
           vx: (Math.random() - 0.5) * 0.5,
           vy: (Math.random() - 0.5) * 0.5,
           size: Math.random() * 2 + 0.5,
+          color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
         });
       }
     }
@@ -43,8 +49,9 @@ export default function ParticleBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < CONNECTION_DIST) {
             const opacity = (1 - dist / CONNECTION_DIST) * 0.15;
+            const [r, g, b] = particles[i].color;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(0, 245, 255, ${opacity})`;
+            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -55,9 +62,10 @@ export default function ParticleBackground() {
 
       // Draw particles
       for (const p of particles) {
+        const [r, g, b] = p.color;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 245, 255, 0.6)";
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 0.62)`;
         ctx.fill();
 
         // Glow
@@ -71,8 +79,8 @@ export default function ParticleBackground() {
           p.y,
           p.size * 3,
         );
-        grad.addColorStop(0, "rgba(0, 245, 255, 0.15)");
-        grad.addColorStop(1, "rgba(0, 245, 255, 0)");
+        grad.addColorStop(0, `rgba(${r}, ${g}, ${b}, 0.18)`);
+        grad.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
         ctx.fillStyle = grad;
         ctx.fill();
       }

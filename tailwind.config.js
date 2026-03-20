@@ -5,14 +5,14 @@ module.exports = {
     extend: {
       colors: {
         navy: {
-          900: "#0A0E1A",
-          800: "#0D1526",
-          700: "#111B33",
+          900: "#040B1F",
+          800: "#0A1430",
+          700: "#122047",
         },
         neon: {
-          cyan: "#00F5FF",
-          purple: "#8B5CF6",
-          magenta: "#FF00C8",
+          cyan: "#35F3FF",
+          purple: "#3F9DFF",
+          magenta: "#74ADFF",
         },
       },
       fontFamily: {
