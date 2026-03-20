@@ -134,22 +134,11 @@ export default function Home() {
             className="self-start mb-4"
           >
             <p className="font-orbitron text-xl font-extrabold text-white italic">When:</p>
+            <p className="font-orbitron text-xl font-black text-white mt-1 tracking-wide">From 9th April to 11th April</p>
             <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">3-Day Event</p>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-neon-cyan text-lg">📍</span>
               <p className="font-orbitron text-sm font-semibold text-slate-300 italic">Your College Campus</p>
-            </div>
-            <div className="flex gap-2 mt-3">
-              {[
-                { label: "Day 1", sub: "Ideathon", cls: "glow-border-cyan text-neon-cyan" },
-                { label: "Day 2", sub: "Hackathon", cls: "glow-border-purple text-neon-purple" },
-                { label: "Day 3", sub: "BGMI", cls: "glow-border-magenta text-neon-magenta" },
-              ].map((d, i) => (
-                <div key={i} className={`${d.cls} rounded-lg px-3 py-1.5 bg-navy-900/70 backdrop-blur-sm`}>
-                  <p className="font-orbitron text-[11px] font-bold tracking-wider">{d.label}</p>
-                  <p className="text-slate-400 text-[10px]">{d.sub}</p>
-                </div>
-              ))}
             </div>
           </motion.div>
 
@@ -204,22 +193,11 @@ export default function Home() {
                 transition={{ duration: 0.7, delay: 0.8 }}
               >
                 <p className="font-orbitron text-2xl font-extrabold text-white italic">When:</p>
+                <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">From 9th April to 11th April</p>
                 <p className="font-orbitron text-4xl font-black text-white mt-1 tracking-wide">3-Day Event</p>
                 <div className="flex items-center gap-2 mt-2">
                   <span className="text-neon-cyan text-lg">📍</span>
                   <p className="font-orbitron text-base font-semibold text-slate-300 italic">Your College Campus</p>
-                </div>
-                <div className="flex gap-3 mt-4">
-                  {[
-                    { label: "Day 1", sub: "Ideathon", cls: "glow-border-cyan text-neon-cyan" },
-                    { label: "Day 2", sub: "Hackathon", cls: "glow-border-purple text-neon-purple" },
-                    { label: "Day 3", sub: "BGMI", cls: "glow-border-magenta text-neon-magenta" },
-                  ].map((d, i) => (
-                    <div key={i} className={`${d.cls} rounded-lg px-3 py-1.5 bg-navy-900/70 backdrop-blur-sm`}>
-                      <p className="font-orbitron text-[10px] font-bold tracking-wider">{d.label}</p>
-                      <p className="text-slate-400 text-[10px]">{d.sub}</p>
-                    </div>
-                  ))}
                 </div>
               </motion.div>
 

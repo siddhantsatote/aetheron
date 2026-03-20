@@ -8,7 +8,7 @@ import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
 import useRegistration from "@/hooks/useRegistration";
 
-const teamSizes = ["2", "3", "4"];
+const teamSizes = ["6"];
 
 export default function HackathonForm() {
   const { submit, loading, success, error, fieldErrors, reset } =
@@ -24,7 +24,9 @@ export default function HackathonForm() {
     member_2: "",
     member_3: "",
     member_4: "",
+    member_5: "",
     problem_statement: "",
+    girl_member_confirm: false,
     agree: false,
   });
 
@@ -38,11 +40,17 @@ export default function HackathonForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.agree) return;
-    const { agree, member_1, member_2, member_3, member_4, ...data } = form;
+    if (!form.agree || !form.girl_member_confirm) return;
+    const { agree, ...data } = form;
     data.team_size = parseInt(data.team_size, 10);
     // Combine team members into a comma-separated string
-    data.team_members = [member_1, member_2, member_3, member_4]
+    data.team_members = [
+      data.member_1,
+      data.member_2,
+      data.member_3,
+      data.member_4,
+      data.member_5,
+    ]
       .filter(Boolean)
       .join(", ");
     await submit(data);
@@ -160,7 +168,7 @@ export default function HackathonForm() {
                 HACKATHON
               </h1>
               <p className="text-slate-400 text-sm">
-                Day 2 — Build. Code. Deploy.
+                Team size 6 — minimum 1 girl member mandatory.
               </p>
             </div>
           </motion.div>
@@ -254,29 +262,35 @@ export default function HackathonForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormInput
-                label="Team Member 1 (Optional)"
+                label="Team Member 1"
                 name="member_1"
                 value={form.member_1}
                 onChange={handleChange}
+                error={fieldErrors.member_1}
                 placeholder="Member name"
+                required
                 color="purple"
                 index={6}
               />
               <FormInput
-                label="Team Member 2 (Optional)"
+                label="Team Member 2"
                 name="member_2"
                 value={form.member_2}
                 onChange={handleChange}
+                error={fieldErrors.member_2}
                 placeholder="Member name"
+                required
                 color="purple"
                 index={7}
               />
               <FormInput
-                label="Team Member 3 (Optional)"
+                label="Team Member 3"
                 name="member_3"
                 value={form.member_3}
                 onChange={handleChange}
+                error={fieldErrors.member_3}
                 placeholder="Member name"
+                required
                 color="purple"
                 index={8}
               />
@@ -288,6 +302,15 @@ export default function HackathonForm() {
                 placeholder="Member name"
                 color="purple"
                 index={9}
+              />
+              <FormInput
+                label="Team Member 5 (Optional)"
+                name="member_5"
+                value={form.member_5}
+                onChange={handleChange}
+                placeholder="Member name"
+                color="purple"
+                index={10}
               />
             </div>
 
@@ -310,7 +333,7 @@ export default function HackathonForm() {
                 ]}
                 required
                 color="purple"
-                index={10}
+                index={11}
               />
               <Link
                 href="/problems"
@@ -324,13 +347,25 @@ export default function HackathonForm() {
 
             <FormInput
               type="checkbox"
+              name="girl_member_confirm"
+              label="Minimum 1 girl member is mandatory per team"
+              value={form.girl_member_confirm}
+              onChange={handleChange}
+              error={fieldErrors.girl_member_confirm}
+              required
+              color="purple"
+              index={12}
+            />
+
+            <FormInput
+              type="checkbox"
               name="agree"
               label="I agree to the event rules and code of conduct"
               value={form.agree}
               onChange={handleChange}
               required
               color="purple"
-              index={14}
+              index={13}
             />
 
             <div className="pt-2">
@@ -338,7 +373,7 @@ export default function HackathonForm() {
                 type="submit"
                 color="purple"
                 loading={loading}
-                disabled={!form.agree}
+                disabled={!form.agree || !form.girl_member_confirm}
                 className="w-full"
               >
                 REGISTER TEAM

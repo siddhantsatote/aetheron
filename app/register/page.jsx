@@ -68,7 +68,7 @@ const events = [
   {
     title: "HACKATHON",
     description:
-      "24 hours of non-stop coding. Build, deploy, and demo your project to win.",
+      "24 hours of non-stop coding. Team size 6 with minimum 1 girl member mandatory.",
     icon: <CodeIcon />,
     color: "purple",
     href: "/register/hackathon",

@@ -8,7 +8,7 @@ import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
 import useRegistration from "@/hooks/useRegistration";
 
-const teamSizes = ["1", "2", "3", "4"];
+const teamSizes = ["1", "2", "3"];
 
 export default function IdeathonForm() {
   const { submit, loading, success, error, fieldErrors, reset } =
@@ -22,8 +22,6 @@ export default function IdeathonForm() {
     team_size: "",
     member_1: "",
     member_2: "",
-    member_3: "",
-    member_4: "",
     idea_title: "",
     problem_statement: "",
     domain: "",
@@ -41,9 +39,9 @@ export default function IdeathonForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.agree) return;
-    const { agree, member_1, member_2, member_3, member_4, ...data } = form;
+    const { agree, ...data } = form;
     data.team_size = parseInt(data.team_size, 10);
-    data.team_members = [member_1, member_2, member_3, member_4]
+    data.team_members = [data.member_1, data.member_2]
       .filter(Boolean)
       .join(", ");
     await submit(data);
@@ -255,40 +253,26 @@ export default function IdeathonForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormInput
-                label="Team Member 1 (Optional)"
+                label="Team Member 1"
                 name="member_1"
                 value={form.member_1}
                 onChange={handleChange}
+                error={fieldErrors.member_1}
                 placeholder="Member name"
+                required
                 color="cyan"
                 index={6}
               />
               <FormInput
-                label="Team Member 2 (Optional)"
+                label="Team Member 2"
                 name="member_2"
                 value={form.member_2}
                 onChange={handleChange}
+                error={fieldErrors.member_2}
                 placeholder="Member name"
+                required
                 color="cyan"
                 index={7}
-              />
-              <FormInput
-                label="Team Member 3 (Optional)"
-                name="member_3"
-                value={form.member_3}
-                onChange={handleChange}
-                placeholder="Member name"
-                color="cyan"
-                index={8}
-              />
-              <FormInput
-                label="Team Member 4 (Optional)"
-                name="member_4"
-                value={form.member_4}
-                onChange={handleChange}
-                placeholder="Member name"
-                color="cyan"
-                index={9}
               />
             </div>
 
@@ -301,7 +285,7 @@ export default function IdeathonForm() {
               placeholder="AI-powered Health Monitor"
               required
               color="cyan"
-              index={10}
+              index={8}
             />
             <FormInput
               label="Problem Statement"
@@ -314,7 +298,7 @@ export default function IdeathonForm() {
               required
               color="cyan"
               rows={4}
-              index={11}
+              index={9}
             />
             <FormInput
               label="Domain / Track"
@@ -326,7 +310,7 @@ export default function IdeathonForm() {
               placeholder="e.g. Healthcare, FinTech, AI/ML, Education..."
               required
               color="cyan"
-              index={12}
+              index={10}
             />
 
             <FormInput
@@ -337,7 +321,7 @@ export default function IdeathonForm() {
               onChange={handleChange}
               required
               color="cyan"
-              index={13}
+              index={11}
             />
 
             <div className="pt-2">
