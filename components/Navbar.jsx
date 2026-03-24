@@ -51,6 +51,12 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              href="/admin/login"
+              className="font-medium text-base tracking-wide transition-all duration-300 hover:text-neon-magenta text-slate-400"
+            >
+              Admin
+            </Link>
+            <Link
               href="/register"
               className="glow-btn-cyan px-5 py-2.5 rounded-lg font-orbitron text-sm text-neon-cyan tracking-wider"
             >
@@ -91,6 +97,13 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/admin/login"
+              onClick={() => setMenuOpen(false)}
+              className="block px-3 py-2.5 rounded-lg text-sm transition-all text-slate-400 hover:text-neon-magenta hover:bg-neon-magenta/5"
+            >
+              Admin
+            </Link>
             <Link
               href="/register"
               onClick={() => setMenuOpen(false)}

@@ -234,6 +234,22 @@ export default function FlyerMakingForm() {
               </GlowButton>
             </div>
           </motion.form>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8 mt-6"
+          >
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-cyan mb-4">
+              RULES
+            </h2>
+            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
+              <li>Maximum no. of participants is 1.</li>
+              <li>Flyer should be made digitally and should include university logo.</li>
+              <li>Each participant should take any 1 topic for flyer and explain his/her flyer in 3 min.</li>
+            </ol>
+          </motion.div>
         </div>
       </section>
     </div>
