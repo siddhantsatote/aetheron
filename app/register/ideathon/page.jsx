@@ -56,10 +56,10 @@ export default function IdeathonForm() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", duration: 0.6 }}
-            className="glassmorphism glow-border-cyan rounded-2xl p-12 text-center max-w-md"
+            className="glassmorphism glow-border-purple rounded-2xl p-12 text-center max-w-md"
           >
             <svg
-              className="w-20 h-20 mx-auto mb-6 text-neon-cyan"
+              className="w-20 h-20 mx-auto mb-6 text-neon-purple"
               viewBox="0 0 52 52"
             >
               <circle
@@ -81,7 +81,7 @@ export default function IdeathonForm() {
                 d="M14 27l7 7 16-16"
               />
             </svg>
-            <h2 className="font-orbitron text-2xl font-bold neon-cyan mb-3">
+            <h2 className="font-orbitron text-2xl font-bold neon-purple mb-3">
               REGISTRATION SUCCESSFUL!
             </h2>
             <p className="text-slate-400 text-sm mb-8">
@@ -90,7 +90,7 @@ export default function IdeathonForm() {
             </p>
             <Link
               href="/register"
-              className="glow-btn-cyan px-6 py-3 rounded-xl font-orbitron text-xs text-neon-cyan tracking-wider inline-block"
+              className="glow-btn-purple px-6 py-3 rounded-xl font-orbitron text-xs text-neon-purple tracking-wider inline-block"
             >
               BACK TO EVENTS
             </Link>
@@ -114,7 +114,7 @@ export default function IdeathonForm() {
           >
             <Link
               href="/register"
-              className="text-slate-500 hover:text-neon-cyan text-sm transition-colors inline-flex items-center gap-2"
+              className="text-slate-500 hover:text-neon-purple text-sm transition-colors inline-flex items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -139,7 +139,7 @@ export default function IdeathonForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="text-neon-cyan">
+            <div className="text-neon-purple">
               <svg
                 className="w-10 h-10"
                 fill="none"
@@ -155,7 +155,7 @@ export default function IdeathonForm() {
               </svg>
             </div>
             <div>
-              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-cyan">
+              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-purple">
                 IDEATHON
               </h1>
               <p className="text-slate-400 text-sm">
@@ -170,7 +170,7 @@ export default function IdeathonForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8 space-y-5"
+            className="glassmorphism glow-border-purple rounded-2xl p-6 sm:p-8 space-y-5"
           >
             {error && (
               <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-3 text-red-400 text-sm">
@@ -187,7 +187,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.full_name}
                 placeholder="John Doe"
                 required
-                color="cyan"
+                color="purple"
                 index={0}
               />
               <FormInput
@@ -199,7 +199,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.email}
                 placeholder="john@email.com"
                 required
-                color="cyan"
+                color="purple"
                 index={1}
               />
               <FormInput
@@ -211,7 +211,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.phone}
                 placeholder="+91 9876543210"
                 required
-                color="cyan"
+                color="purple"
                 index={2}
               />
               <FormInput
@@ -222,7 +222,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.college}
                 placeholder="MIT Bangalore"
                 required
-                color="cyan"
+                color="purple"
                 index={3}
               />
               <FormInput
@@ -233,7 +233,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.team_name}
                 placeholder="InnoVators"
                 required
-                color="cyan"
+                color="purple"
                 index={4}
               />
               <FormInput
@@ -246,7 +246,7 @@ export default function IdeathonForm() {
                 placeholder="Select team size"
                 options={teamSizes}
                 required
-                color="cyan"
+                color="purple"
                 index={5}
               />
             </div>
@@ -260,7 +260,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.member_1}
                 placeholder="Member name"
                 required
-                color="cyan"
+                color="purple"
                 index={6}
               />
               <FormInput
@@ -271,7 +271,7 @@ export default function IdeathonForm() {
                 error={fieldErrors.member_2}
                 placeholder="Member name"
                 required
-                color="cyan"
+                color="purple"
                 index={7}
               />
             </div>
@@ -284,7 +284,7 @@ export default function IdeathonForm() {
               error={fieldErrors.idea_title}
               placeholder="AI-powered Health Monitor"
               required
-              color="cyan"
+              color="purple"
               index={8}
             />
             <FormInput
@@ -296,7 +296,7 @@ export default function IdeathonForm() {
               error={fieldErrors.problem_statement}
               placeholder="Describe the problem you're solving..."
               required
-              color="cyan"
+              color="purple"
               rows={4}
               index={9}
             />
@@ -309,7 +309,7 @@ export default function IdeathonForm() {
               error={fieldErrors.domain}
               placeholder="e.g. Healthcare, FinTech, AI/ML, Education..."
               required
-              color="cyan"
+              color="purple"
               index={10}
             />
 
@@ -320,14 +320,14 @@ export default function IdeathonForm() {
               value={form.agree}
               onChange={handleChange}
               required
-              color="cyan"
+              color="purple"
               index={11}
             />
 
             <div className="pt-2">
               <GlowButton
                 type="submit"
-                color="cyan"
+                color="purple"
                 loading={loading}
                 disabled={!form.agree}
                 className="w-full"
@@ -336,6 +336,31 @@ export default function IdeathonForm() {
               </GlowButton>
             </div>
           </motion.form>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="glassmorphism glow-border-purple rounded-2xl p-6 sm:p-8 mt-6"
+          >
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-purple mb-4">
+              RULES &amp; REGULATIONS
+            </h2>
+            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
+              <li>Eligibility: Open to all Alard Students.</li>
+              <li>Team Size: 1–3 members per team.</li>
+              <li>Registration: Must register before deadline.</li>
+              <li>Rounds: Idea submission → Final presentation.</li>
+              <li>PPT Max 6 Slides.</li>
+              <li>PPT should contain: Title Slide, Problem Statement, Proposed Solution, Feasibility &amp; Implementation, Revenue Model, Impact &amp; Scalability.</li>
+              <li>Presentation Time: 5 minutes.</li>
+              <li>QnA: 3 minutes per team.</li>
+              <li>Judging: Innovation &amp; Creativity, Relevance of Problem, Feasibility &amp; Practicality, Impact &amp; Scalability, Revenue Model / Sustainability, Clarity of Presentation &amp; Pitch.</li>
+              <li>Plagiarism: Not allowed (leads to disqualification).</li>
+              <li>Discipline: Maintain proper behavior during event.</li>
+              <li>Decision: Judges&apos; decision is final. No arguments with the judges will be tolerated.</li>
+            </ol>
+          </motion.div>
         </div>
       </section>
     </div>

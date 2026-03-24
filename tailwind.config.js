@@ -13,6 +13,11 @@ module.exports = {
           cyan: "#35F3FF",
           purple: "#3F9DFF",
           magenta: "#74ADFF",
+          amber: "#FFB12B",
+          emerald: "#12DF93",
+          rose: "#FF4CA0",
+          red: "#FF4A45",
+          violet: "#9B84FF",
         },
       },
       fontFamily: {

@@ -13,6 +13,11 @@ export default function GlowButton({
     cyan: "glow-btn-cyan text-neon-cyan",
     purple: "glow-btn-purple text-neon-purple",
     magenta: "glow-btn-magenta text-neon-magenta",
+    amber: "glow-btn-amber text-neon-amber",
+    emerald: "glow-btn-emerald text-neon-emerald",
+    rose: "glow-btn-rose text-neon-rose",
+    red: "glow-btn-red text-neon-red",
+    violet: "glow-btn-violet text-neon-violet",
   };
 
   return (

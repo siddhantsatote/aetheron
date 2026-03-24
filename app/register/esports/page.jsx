@@ -60,10 +60,10 @@ export default function EsportsForm() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", duration: 0.6 }}
-            className="glassmorphism glow-border-magenta rounded-2xl p-12 text-center max-w-md"
+            className="glassmorphism glow-border-amber rounded-2xl p-12 text-center max-w-md"
           >
             <svg
-              className="w-20 h-20 mx-auto mb-6 text-neon-magenta"
+              className="w-20 h-20 mx-auto mb-6 text-neon-amber"
               viewBox="0 0 52 52"
             >
               <circle
@@ -85,7 +85,7 @@ export default function EsportsForm() {
                 d="M14 27l7 7 16-16"
               />
             </svg>
-            <h2 className="font-orbitron text-2xl font-bold neon-magenta mb-3">
+            <h2 className="font-orbitron text-2xl font-bold neon-amber mb-3">
               REGISTRATION SUCCESSFUL!
             </h2>
             <p className="text-slate-400 text-sm mb-8">
@@ -94,7 +94,7 @@ export default function EsportsForm() {
             </p>
             <Link
               href="/register"
-              className="glow-btn-magenta px-6 py-3 rounded-xl font-orbitron text-xs text-neon-magenta tracking-wider inline-block"
+              className="glow-btn-amber px-6 py-3 rounded-xl font-orbitron text-xs text-neon-amber tracking-wider inline-block"
             >
               BACK TO EVENTS
             </Link>
@@ -118,7 +118,7 @@ export default function EsportsForm() {
           >
             <Link
               href="/register"
-              className="text-slate-500 hover:text-neon-magenta text-sm transition-colors inline-flex items-center gap-2"
+              className="text-slate-500 hover:text-neon-amber text-sm transition-colors inline-flex items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -143,7 +143,7 @@ export default function EsportsForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="text-neon-magenta">
+            <div className="text-neon-amber">
               <svg
                 className="w-10 h-10"
                 fill="none"
@@ -159,7 +159,7 @@ export default function EsportsForm() {
               </svg>
             </div>
             <div>
-              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-magenta">
+              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-amber">
                 eSPORTS — BGMI
               </h1>
               <p className="text-slate-400 text-sm">
@@ -174,7 +174,7 @@ export default function EsportsForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glassmorphism glow-border-magenta rounded-2xl p-6 sm:p-8 space-y-5"
+            className="glassmorphism glow-border-amber rounded-2xl p-6 sm:p-8 space-y-5"
           >
             {error && (
               <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-3 text-red-400 text-sm">
@@ -191,7 +191,7 @@ export default function EsportsForm() {
                 error={fieldErrors.full_name}
                 placeholder="John Doe"
                 required
-                color="magenta"
+                color="amber"
                 index={0}
               />
               <FormInput
@@ -203,7 +203,7 @@ export default function EsportsForm() {
                 error={fieldErrors.email}
                 placeholder="john@email.com"
                 required
-                color="magenta"
+                color="amber"
                 index={1}
               />
               <FormInput
@@ -215,7 +215,7 @@ export default function EsportsForm() {
                 error={fieldErrors.phone}
                 placeholder="+91 9876543210"
                 required
-                color="magenta"
+                color="amber"
                 index={2}
               />
               <FormInput
@@ -226,7 +226,7 @@ export default function EsportsForm() {
                 error={fieldErrors.college}
                 placeholder="MIT Bangalore"
                 required
-                color="magenta"
+                color="amber"
                 index={3}
               />
               <FormInput
@@ -237,7 +237,7 @@ export default function EsportsForm() {
                 error={fieldErrors.bgmi_uid}
                 placeholder="5123456789"
                 required
-                color="magenta"
+                color="amber"
                 index={4}
               />
               <FormInput
@@ -248,7 +248,7 @@ export default function EsportsForm() {
                 error={fieldErrors.ign}
                 placeholder="xShadowKing"
                 required
-                color="magenta"
+                color="amber"
                 index={5}
               />
               <FormInput
@@ -261,7 +261,7 @@ export default function EsportsForm() {
                 placeholder="Select device"
                 options={deviceTypes}
                 required
-                color="magenta"
+                color="amber"
                 index={6}
               />
             </div>
@@ -274,7 +274,7 @@ export default function EsportsForm() {
               error={fieldErrors.team_name}
               placeholder="Shadow Squad"
               required
-              color="magenta"
+              color="amber"
               index={7}
             />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -285,7 +285,7 @@ export default function EsportsForm() {
                 onChange={handleChange}
                 placeholder="Player name"
                 required
-                color="magenta"
+                color="amber"
                 index={8}
               />
               <FormInput
@@ -295,7 +295,7 @@ export default function EsportsForm() {
                 onChange={handleChange}
                 placeholder="Player name"
                 required
-                color="magenta"
+                color="amber"
                 index={9}
               />
               <FormInput
@@ -305,7 +305,7 @@ export default function EsportsForm() {
                 onChange={handleChange}
                 placeholder="Player name"
                 required
-                color="magenta"
+                color="amber"
                 index={10}
               />
             </div>
@@ -317,14 +317,14 @@ export default function EsportsForm() {
               value={form.agree}
               onChange={handleChange}
               required
-              color="magenta"
+              color="amber"
               index={10}
             />
 
             <div className="pt-2">
               <GlowButton
                 type="submit"
-                color="magenta"
+                color="amber"
                 loading={loading}
                 disabled={!form.agree}
                 className="w-full"

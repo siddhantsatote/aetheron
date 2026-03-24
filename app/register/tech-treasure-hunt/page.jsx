@@ -46,10 +46,10 @@ export default function TechTreasureHuntForm() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", duration: 0.6 }}
-            className="glassmorphism glow-border-magenta rounded-2xl p-12 text-center max-w-md"
+            className="glassmorphism glow-border-red rounded-2xl p-12 text-center max-w-md"
           >
             <svg
-              className="w-20 h-20 mx-auto mb-6 text-neon-magenta"
+              className="w-20 h-20 mx-auto mb-6 text-neon-red"
               viewBox="0 0 52 52"
             >
               <circle
@@ -71,7 +71,7 @@ export default function TechTreasureHuntForm() {
                 d="M14 27l7 7 16-16"
               />
             </svg>
-            <h2 className="font-orbitron text-2xl font-bold neon-magenta mb-3">
+            <h2 className="font-orbitron text-2xl font-bold neon-red mb-3">
               REGISTRATION SUCCESSFUL!
             </h2>
             <p className="text-slate-400 text-sm mb-8">
@@ -79,7 +79,7 @@ export default function TechTreasureHuntForm() {
             </p>
             <Link
               href="/register"
-              className="glow-btn-magenta px-6 py-3 rounded-xl font-orbitron text-xs text-neon-magenta tracking-wider inline-block"
+              className="glow-btn-red px-6 py-3 rounded-xl font-orbitron text-xs text-neon-red tracking-wider inline-block"
             >
               BACK TO EVENTS
             </Link>
@@ -102,7 +102,7 @@ export default function TechTreasureHuntForm() {
           >
             <Link
               href="/register"
-              className="text-slate-500 hover:text-neon-magenta text-sm transition-colors inline-flex items-center gap-2"
+              className="text-slate-500 hover:text-neon-red text-sm transition-colors inline-flex items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -126,7 +126,7 @@ export default function TechTreasureHuntForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="text-neon-magenta">
+            <div className="text-neon-red">
               <svg
                 className="w-10 h-10"
                 fill="none"
@@ -142,7 +142,7 @@ export default function TechTreasureHuntForm() {
               </svg>
             </div>
             <div>
-              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-magenta">
+              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-red">
                 TECH TREASURE HUNT
               </h1>
               <p className="text-slate-400 text-sm">
@@ -155,9 +155,9 @@ export default function TechTreasureHuntForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="glassmorphism glow-border-magenta rounded-2xl p-4 sm:p-5 mb-6"
+            className="glassmorphism glow-border-red rounded-2xl p-4 sm:p-5 mb-6"
           >
-            <h2 className="font-orbitron text-sm sm:text-base text-neon-magenta tracking-wider mb-3">
+            <h2 className="font-orbitron text-sm sm:text-base text-neon-red tracking-wider mb-3">
               MAP DISPLAY
             </h2>
             <img
@@ -172,7 +172,7 @@ export default function TechTreasureHuntForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glassmorphism glow-border-magenta rounded-2xl p-6 sm:p-8 space-y-7"
+            className="glassmorphism glow-border-red rounded-2xl p-6 sm:p-8 space-y-7"
           >
             {error && (
               <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-3 text-red-400 text-sm">
@@ -181,7 +181,7 @@ export default function TechTreasureHuntForm() {
             )}
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-magenta mb-3 tracking-wider">Team Lead (Required)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Lead (Required)</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 <FormInput
                   label="Name"
@@ -190,7 +190,7 @@ export default function TechTreasureHuntForm() {
                   onChange={handleChange}
                   error={fieldErrors.team_lead_name}
                   required
-                  color="magenta"
+                  color="red"
                   index={0}
                 />
                 <FormInput
@@ -201,7 +201,7 @@ export default function TechTreasureHuntForm() {
                   onChange={handleChange}
                   error={fieldErrors.team_lead_email}
                   required
-                  color="magenta"
+                  color="red"
                   index={1}
                 />
                 <FormInput
@@ -212,14 +212,14 @@ export default function TechTreasureHuntForm() {
                   onChange={handleChange}
                   error={fieldErrors.team_lead_phone}
                   required
-                  color="magenta"
+                  color="red"
                   index={2}
                 />
               </div>
             </div>
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-magenta mb-3 tracking-wider">Team Member 2 (Required)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Member 2 (Required)</h2>
               <div className="grid grid-cols-1 gap-5">
                 <FormInput
                   label="Name"
@@ -228,14 +228,14 @@ export default function TechTreasureHuntForm() {
                   onChange={handleChange}
                   error={fieldErrors.member_2_name}
                   required
-                  color="magenta"
+                  color="red"
                   index={3}
                 />
               </div>
             </div>
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-magenta mb-3 tracking-wider">Team Member 3 (Optional)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Member 3 (Optional)</h2>
               <div className="grid grid-cols-1 gap-5">
                 <FormInput
                   label="Name"
@@ -243,14 +243,14 @@ export default function TechTreasureHuntForm() {
                   value={form.member_3_name}
                   onChange={handleChange}
                   error={fieldErrors.member_3_name}
-                  color="magenta"
+                  color="red"
                   index={4}
                 />
               </div>
             </div>
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-magenta mb-3 tracking-wider">Team Member 4 (Optional)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Member 4 (Optional)</h2>
               <div className="grid grid-cols-1 gap-5">
                 <FormInput
                   label="Name"
@@ -258,7 +258,7 @@ export default function TechTreasureHuntForm() {
                   value={form.member_4_name}
                   onChange={handleChange}
                   error={fieldErrors.member_4_name}
-                  color="magenta"
+                  color="red"
                   index={5}
                 />
               </div>
@@ -271,14 +271,14 @@ export default function TechTreasureHuntForm() {
               value={form.agree}
               onChange={handleChange}
               required
-              color="magenta"
+              color="red"
               index={6}
             />
 
             <div className="pt-2">
               <GlowButton
                 type="submit"
-                color="magenta"
+                color="red"
                 loading={loading}
                 disabled={!form.agree}
                 className="w-full"
@@ -292,9 +292,9 @@ export default function TechTreasureHuntForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="glassmorphism glow-border-magenta rounded-2xl p-6 sm:p-8 mt-6"
+            className="glassmorphism glow-border-red rounded-2xl p-6 sm:p-8 mt-6"
           >
-            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-magenta mb-3">
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-red mb-3">
               JOIN WHATSAPP GROUP
             </h2>
             <p className="text-slate-300 text-sm sm:text-base mb-4">
@@ -304,7 +304,7 @@ export default function TechTreasureHuntForm() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="glow-btn-magenta px-5 py-3 rounded-xl font-orbitron text-xs text-neon-magenta tracking-wider inline-flex items-center gap-2"
+              className="glow-btn-red px-5 py-3 rounded-xl font-orbitron text-xs text-neon-red tracking-wider inline-flex items-center gap-2"
             >
               JOIN GROUP
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

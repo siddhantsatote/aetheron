@@ -59,6 +59,41 @@ body {
     0 0 22px rgba(116, 173, 255, 0.8),
     0 0 40px rgba(116, 173, 255, 0.6);
 }
+.neon-amber {
+  color: #ffb12b;
+  text-shadow:
+    0 0 10px #ffb12b,
+    0 0 22px rgba(255, 177, 43, 0.8),
+    0 0 40px rgba(255, 177, 43, 0.6);
+}
+.neon-emerald {
+  color: #12df93;
+  text-shadow:
+    0 0 10px #12df93,
+    0 0 22px rgba(18, 223, 147, 0.8),
+    0 0 40px rgba(18, 223, 147, 0.6);
+}
+.neon-rose {
+  color: #ff4ca0;
+  text-shadow:
+    0 0 10px #ff4ca0,
+    0 0 22px rgba(255, 76, 160, 0.8),
+    0 0 40px rgba(255, 76, 160, 0.6);
+}
+.neon-red {
+  color: #ff4a45;
+  text-shadow:
+    0 0 10px #ff4a45,
+    0 0 22px rgba(255, 74, 69, 0.8),
+    0 0 40px rgba(255, 74, 69, 0.6);
+}
+.neon-violet {
+  color: #9b84ff;
+  text-shadow:
+    0 0 10px #9b84ff,
+    0 0 22px rgba(155, 132, 255, 0.8),
+    0 0 40px rgba(155, 132, 255, 0.6);
+}
 
 /* Neon border glow utilities */
 .glow-border-cyan {
@@ -78,6 +113,36 @@ body {
     0 0 18px rgba(116, 173, 255, 0.35),
     inset 0 0 16px rgba(116, 173, 255, 0.06);
   border: 1px solid rgba(116, 173, 255, 0.35);
+}
+.glow-border-amber {
+  box-shadow:
+    0 0 18px rgba(255, 177, 43, 0.35),
+    inset 0 0 16px rgba(255, 177, 43, 0.06);
+  border: 1px solid rgba(255, 177, 43, 0.35);
+}
+.glow-border-emerald {
+  box-shadow:
+    0 0 18px rgba(18, 223, 147, 0.35),
+    inset 0 0 16px rgba(18, 223, 147, 0.06);
+  border: 1px solid rgba(18, 223, 147, 0.35);
+}
+.glow-border-rose {
+  box-shadow:
+    0 0 18px rgba(255, 76, 160, 0.35),
+    inset 0 0 16px rgba(255, 76, 160, 0.06);
+  border: 1px solid rgba(255, 76, 160, 0.35);
+}
+.glow-border-red {
+  box-shadow:
+    0 0 18px rgba(255, 74, 69, 0.35),
+    inset 0 0 16px rgba(255, 74, 69, 0.06);
+  border: 1px solid rgba(255, 74, 69, 0.35);
+}
+.glow-border-violet {
+  box-shadow:
+    0 0 18px rgba(155, 132, 255, 0.35),
+    inset 0 0 16px rgba(155, 132, 255, 0.06);
+  border: 1px solid rgba(155, 132, 255, 0.35);
 }
 
 /* Glassmorphism */
@@ -137,6 +202,86 @@ body {
   border-color: #74adff;
 }
 
+.glow-btn-amber {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 177, 43, 0.16),
+    rgba(255, 177, 43, 0.06)
+  );
+  border: 1px solid rgba(255, 177, 43, 0.45);
+  transition: all 0.3s ease;
+}
+.glow-btn-amber:hover {
+  box-shadow:
+    0 0 26px rgba(255, 177, 43, 0.58),
+    0 0 52px rgba(255, 177, 43, 0.28);
+  border-color: #ffb12b;
+}
+
+.glow-btn-emerald {
+  background: linear-gradient(
+    135deg,
+    rgba(18, 223, 147, 0.16),
+    rgba(18, 223, 147, 0.06)
+  );
+  border: 1px solid rgba(18, 223, 147, 0.45);
+  transition: all 0.3s ease;
+}
+.glow-btn-emerald:hover {
+  box-shadow:
+    0 0 26px rgba(18, 223, 147, 0.58),
+    0 0 52px rgba(18, 223, 147, 0.28);
+  border-color: #12df93;
+}
+
+.glow-btn-rose {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 76, 160, 0.16),
+    rgba(255, 76, 160, 0.06)
+  );
+  border: 1px solid rgba(255, 76, 160, 0.45);
+  transition: all 0.3s ease;
+}
+.glow-btn-rose:hover {
+  box-shadow:
+    0 0 26px rgba(255, 76, 160, 0.58),
+    0 0 52px rgba(255, 76, 160, 0.28);
+  border-color: #ff4ca0;
+}
+
+.glow-btn-red {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 74, 69, 0.16),
+    rgba(255, 74, 69, 0.06)
+  );
+  border: 1px solid rgba(255, 74, 69, 0.45);
+  transition: all 0.3s ease;
+}
+.glow-btn-red:hover {
+  box-shadow:
+    0 0 26px rgba(255, 74, 69, 0.58),
+    0 0 52px rgba(255, 74, 69, 0.28);
+  border-color: #ff4a45;
+}
+
+.glow-btn-violet {
+  background: linear-gradient(
+    135deg,
+    rgba(155, 132, 255, 0.16),
+    rgba(155, 132, 255, 0.06)
+  );
+  border: 1px solid rgba(155, 132, 255, 0.45);
+  transition: all 0.3s ease;
+}
+.glow-btn-violet:hover {
+  box-shadow:
+    0 0 26px rgba(155, 132, 255, 0.58),
+    0 0 52px rgba(155, 132, 255, 0.28);
+  border-color: #9b84ff;
+}
+
 /* Input focus glow */
 .input-glow:focus {
   outline: none;
@@ -155,6 +300,26 @@ body {
 .input-glow-magenta:focus {
   border-color: #74adff;
   box-shadow: 0 0 12px rgba(116, 173, 255, 0.32);
+}
+.input-glow-amber:focus {
+  border-color: #ffb12b;
+  box-shadow: 0 0 12px rgba(255, 177, 43, 0.32);
+}
+.input-glow-emerald:focus {
+  border-color: #12df93;
+  box-shadow: 0 0 12px rgba(18, 223, 147, 0.32);
+}
+.input-glow-rose:focus {
+  border-color: #ff4ca0;
+  box-shadow: 0 0 12px rgba(255, 76, 160, 0.32);
+}
+.input-glow-red:focus {
+  border-color: #ff4a45;
+  box-shadow: 0 0 12px rgba(255, 74, 69, 0.32);
+}
+.input-glow-violet:focus {
+  border-color: #9b84ff;
+  box-shadow: 0 0 12px rgba(155, 132, 255, 0.32);
 }
 
 /* Error state */

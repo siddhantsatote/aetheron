@@ -46,10 +46,10 @@ export default function BlogWritingForm() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", duration: 0.6 }}
-            className="glassmorphism glow-border-cyan rounded-2xl p-12 text-center max-w-md"
+            className="glassmorphism glow-border-emerald rounded-2xl p-12 text-center max-w-md"
           >
             <svg
-              className="w-20 h-20 mx-auto mb-6 text-neon-cyan"
+              className="w-20 h-20 mx-auto mb-6 text-neon-emerald"
               viewBox="0 0 52 52"
             >
               <circle
@@ -71,7 +71,7 @@ export default function BlogWritingForm() {
                 d="M14 27l7 7 16-16"
               />
             </svg>
-            <h2 className="font-orbitron text-2xl font-bold neon-cyan mb-3">
+            <h2 className="font-orbitron text-2xl font-bold neon-emerald mb-3">
               REGISTRATION SUCCESSFUL!
             </h2>
             <p className="text-slate-400 text-sm mb-8">
@@ -80,7 +80,7 @@ export default function BlogWritingForm() {
             </p>
             <Link
               href="/register"
-              className="glow-btn-cyan px-6 py-3 rounded-xl font-orbitron text-xs text-neon-cyan tracking-wider inline-block"
+              className="glow-btn-emerald px-6 py-3 rounded-xl font-orbitron text-xs text-neon-emerald tracking-wider inline-block"
             >
               BACK TO EVENTS
             </Link>
@@ -103,7 +103,7 @@ export default function BlogWritingForm() {
           >
             <Link
               href="/register"
-              className="text-slate-500 hover:text-neon-cyan text-sm transition-colors inline-flex items-center gap-2"
+              className="text-slate-500 hover:text-neon-emerald text-sm transition-colors inline-flex items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -127,7 +127,7 @@ export default function BlogWritingForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="text-neon-cyan">
+            <div className="text-neon-emerald">
               <svg
                 className="w-10 h-10"
                 fill="none"
@@ -143,7 +143,7 @@ export default function BlogWritingForm() {
               </svg>
             </div>
             <div>
-              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-cyan">
+              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-emerald">
                 BLOG WRITING
               </h1>
               <p className="text-slate-400 text-sm">
@@ -156,9 +156,9 @@ export default function BlogWritingForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8 mb-6"
+            className="glassmorphism glow-border-emerald rounded-2xl p-6 sm:p-8 mb-6"
           >
-            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-cyan mb-4">
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-emerald mb-4">
               BLOG WRITING DOMAINS
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
@@ -175,7 +175,7 @@ export default function BlogWritingForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8 space-y-5"
+            className="glassmorphism glow-border-emerald rounded-2xl p-6 sm:p-8 space-y-5"
           >
             {error && (
               <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-3 text-red-400 text-sm">
@@ -192,7 +192,7 @@ export default function BlogWritingForm() {
                 error={fieldErrors.full_name}
                 placeholder="John Doe"
                 required
-                color="cyan"
+                color="emerald"
                 index={0}
               />
               <FormInput
@@ -203,7 +203,7 @@ export default function BlogWritingForm() {
                 error={fieldErrors.college}
                 placeholder="MIT Bangalore"
                 required
-                color="cyan"
+                color="emerald"
                 index={1}
               />
               <FormInput
@@ -214,7 +214,7 @@ export default function BlogWritingForm() {
                 error={fieldErrors.branch_year}
                 placeholder="CSE / 3rd Year"
                 required
-                color="cyan"
+                color="emerald"
                 index={2}
               />
               <FormInput
@@ -226,7 +226,7 @@ export default function BlogWritingForm() {
                 error={fieldErrors.phone}
                 placeholder="+91 9876543210"
                 required
-                color="cyan"
+                color="emerald"
                 index={3}
               />
               <FormInput
@@ -238,7 +238,7 @@ export default function BlogWritingForm() {
                 error={fieldErrors.email}
                 placeholder="john@email.com"
                 required
-                color="cyan"
+                color="emerald"
                 index={4}
               />
               <FormInput
@@ -249,7 +249,7 @@ export default function BlogWritingForm() {
                 error={fieldErrors.domain}
                 placeholder="AI, Web Dev, Cybersecurity..."
                 required
-                color="cyan"
+                color="emerald"
                 index={5}
               />
             </div>
@@ -262,7 +262,7 @@ export default function BlogWritingForm() {
               error={fieldErrors.blog_title}
               placeholder="The Future of AI in Education"
               required
-              color="cyan"
+              color="emerald"
               index={6}
             />
 
@@ -273,14 +273,14 @@ export default function BlogWritingForm() {
               value={form.agree}
               onChange={handleChange}
               required
-              color="cyan"
+              color="emerald"
               index={7}
             />
 
             <div className="pt-2">
               <GlowButton
                 type="submit"
-                color="cyan"
+                color="emerald"
                 loading={loading}
                 disabled={!form.agree}
                 className="w-full"
@@ -289,6 +289,30 @@ export default function BlogWritingForm() {
               </GlowButton>
             </div>
           </motion.form>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="glassmorphism glow-border-emerald rounded-2xl p-6 sm:p-8 mt-6"
+          >
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-emerald mb-4">
+              RULES &amp; REGULATIONS
+            </h2>
+            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
+              <li>Eligibility: Open to all students.</li>
+              <li>Participation: Individual participation only.</li>
+              <li>Registration: Participants must register before the given deadline.</li>
+              <li>Domains: Participants must choose any one domain from the provided list.</li>
+              <li>Mode: The competition will be conducted using laptops. Participants must bring their own device.</li>
+              <li>Time Limit: As announced during the event.</li>
+              <li>Word Limit: Maximum 600 words.</li>
+              <li>Plagiarism &amp; AI Usage: Strictly prohibited. The content must be original. Any plagiarism or use of AI-generated content will lead to disqualification.</li>
+              <li>Internet Usage: Use of the internet during the competition is not allowed.</li>
+              <li>Judging Criteria: Based on creativity, clarity, relevance to the domain and originality.</li>
+              <li>Decision: Judge&apos;s decision will be final.</li>
+            </ol>
+          </motion.div>
         </div>
       </section>
     </div>

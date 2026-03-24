@@ -21,6 +21,11 @@ export default function FormInput({
       cyan: "input-glow-cyan",
       purple: "input-glow-purple",
       magenta: "input-glow-magenta",
+      amber: "input-glow-amber",
+      emerald: "input-glow-emerald",
+      rose: "input-glow-rose",
+      red: "input-glow-red",
+      violet: "input-glow-violet",
     }[color] || "input-glow-cyan";
 
   const labelColor =
@@ -28,7 +33,24 @@ export default function FormInput({
       cyan: "text-neon-cyan",
       purple: "text-neon-purple",
       magenta: "text-neon-magenta",
+      amber: "text-neon-amber",
+      emerald: "text-neon-emerald",
+      rose: "text-neon-rose",
+      red: "text-neon-red",
+      violet: "text-neon-violet",
     }[color] || "text-neon-cyan";
+
+  const checkboxAccentClass =
+    {
+      cyan: "accent-neon-cyan",
+      purple: "accent-neon-purple",
+      magenta: "accent-neon-magenta",
+      amber: "accent-neon-amber",
+      emerald: "accent-neon-emerald",
+      rose: "accent-neon-rose",
+      red: "accent-neon-red",
+      violet: "accent-neon-violet",
+    }[color] || "accent-neon-cyan";
 
   const baseInputClass = `w-full bg-navy-900/80 border border-slate-700 rounded-lg px-4 py-3 text-sm text-slate-200 placeholder:text-slate-500 transition-all duration-300 ${focusClass} ${
     error ? "input-error" : ""
@@ -83,7 +105,7 @@ export default function FormInput({
             checked={value}
             onChange={onChange}
             required={required}
-            className="mt-1 h-4 w-4 rounded border-slate-600 bg-navy-900 accent-neon-cyan"
+            className={`mt-1 h-4 w-4 rounded border-slate-600 bg-navy-900 ${checkboxAccentClass}`}
           />
           <span className="text-sm text-slate-300">{label}</span>
         </label>

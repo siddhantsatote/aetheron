@@ -65,10 +65,10 @@ export default function HackathonForm() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", duration: 0.6 }}
-            className="glassmorphism glow-border-purple rounded-2xl p-12 text-center max-w-md"
+            className="glassmorphism glow-border-cyan rounded-2xl p-12 text-center max-w-md"
           >
             <svg
-              className="w-20 h-20 mx-auto mb-6 text-neon-purple"
+              className="w-20 h-20 mx-auto mb-6 text-neon-cyan"
               viewBox="0 0 52 52"
             >
               <circle
@@ -90,7 +90,7 @@ export default function HackathonForm() {
                 d="M14 27l7 7 16-16"
               />
             </svg>
-            <h2 className="font-orbitron text-2xl font-bold neon-purple mb-3">
+            <h2 className="font-orbitron text-2xl font-bold neon-cyan mb-3">
               REGISTRATION SUCCESSFUL!
             </h2>
             <p className="text-slate-400 text-sm mb-8">
@@ -99,7 +99,7 @@ export default function HackathonForm() {
             </p>
             <Link
               href="/register"
-              className="glow-btn-purple px-6 py-3 rounded-xl font-orbitron text-xs text-neon-purple tracking-wider inline-block"
+              className="glow-btn-cyan px-6 py-3 rounded-xl font-orbitron text-xs text-neon-cyan tracking-wider inline-block"
             >
               BACK TO EVENTS
             </Link>
@@ -123,7 +123,7 @@ export default function HackathonForm() {
           >
             <Link
               href="/register"
-              className="text-slate-500 hover:text-neon-purple text-sm transition-colors inline-flex items-center gap-2"
+              className="text-slate-500 hover:text-neon-cyan text-sm transition-colors inline-flex items-center gap-2"
             >
               <svg
                 className="w-4 h-4"
@@ -148,7 +148,7 @@ export default function HackathonForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-4 mb-8"
           >
-            <div className="text-neon-purple">
+            <div className="text-neon-cyan">
               <svg
                 className="w-10 h-10"
                 fill="none"
@@ -164,7 +164,7 @@ export default function HackathonForm() {
               </svg>
             </div>
             <div>
-              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-purple">
+              <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-cyan">
                 HACKATHON
               </h1>
               <p className="text-slate-400 text-sm">
@@ -179,7 +179,7 @@ export default function HackathonForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="glassmorphism glow-border-purple rounded-2xl p-6 sm:p-8 space-y-5"
+            className="glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8 space-y-5"
           >
             {error && (
               <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-3 text-red-400 text-sm">
@@ -196,7 +196,7 @@ export default function HackathonForm() {
                 error={fieldErrors.full_name}
                 placeholder="John Doe"
                 required
-                color="purple"
+                color="cyan"
                 index={0}
               />
               <FormInput
@@ -208,7 +208,7 @@ export default function HackathonForm() {
                 error={fieldErrors.email}
                 placeholder="john@email.com"
                 required
-                color="purple"
+                color="cyan"
                 index={1}
               />
               <FormInput
@@ -220,7 +220,7 @@ export default function HackathonForm() {
                 error={fieldErrors.phone}
                 placeholder="+91 9876543210"
                 required
-                color="purple"
+                color="cyan"
                 index={2}
               />
               <FormInput
@@ -231,7 +231,7 @@ export default function HackathonForm() {
                 error={fieldErrors.college}
                 placeholder="MIT Bangalore"
                 required
-                color="purple"
+                color="cyan"
                 index={3}
               />
               <FormInput
@@ -242,7 +242,7 @@ export default function HackathonForm() {
                 error={fieldErrors.team_name}
                 placeholder="CodeBreakers"
                 required
-                color="purple"
+                color="cyan"
                 index={4}
               />
               <FormInput
@@ -255,7 +255,7 @@ export default function HackathonForm() {
                 placeholder="Select team size"
                 options={teamSizes}
                 required
-                color="purple"
+                color="cyan"
                 index={5}
               />
             </div>
@@ -269,7 +269,7 @@ export default function HackathonForm() {
                 error={fieldErrors.member_1}
                 placeholder="Member name"
                 required
-                color="purple"
+                color="cyan"
                 index={6}
               />
               <FormInput
@@ -280,7 +280,7 @@ export default function HackathonForm() {
                 error={fieldErrors.member_2}
                 placeholder="Member name"
                 required
-                color="purple"
+                color="cyan"
                 index={7}
               />
               <FormInput
@@ -291,7 +291,7 @@ export default function HackathonForm() {
                 error={fieldErrors.member_3}
                 placeholder="Member name"
                 required
-                color="purple"
+                color="cyan"
                 index={8}
               />
               <FormInput
@@ -300,7 +300,7 @@ export default function HackathonForm() {
                 value={form.member_4}
                 onChange={handleChange}
                 placeholder="Member name"
-                color="purple"
+                color="cyan"
                 index={9}
               />
               <FormInput
@@ -309,7 +309,7 @@ export default function HackathonForm() {
                 value={form.member_5}
                 onChange={handleChange}
                 placeholder="Member name"
-                color="purple"
+                color="cyan"
                 index={10}
               />
             </div>
@@ -332,7 +332,7 @@ export default function HackathonForm() {
                   "Mental Health & Wellness App",
                 ]}
                 required
-                color="purple"
+                color="cyan"
                 index={11}
               />
             </div>
@@ -345,7 +345,7 @@ export default function HackathonForm() {
               onChange={handleChange}
               error={fieldErrors.girl_member_confirm}
               required
-              color="purple"
+              color="cyan"
               index={12}
             />
 
@@ -356,14 +356,14 @@ export default function HackathonForm() {
               value={form.agree}
               onChange={handleChange}
               required
-              color="purple"
+              color="cyan"
               index={13}
             />
 
             <div className="pt-2">
               <GlowButton
                 type="submit"
-                color="purple"
+                color="cyan"
                 loading={loading}
                 disabled={!form.agree || !form.girl_member_confirm}
                 className="w-full"
