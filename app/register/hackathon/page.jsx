@@ -316,25 +316,29 @@ export default function HackathonForm() {
 
             <div className="space-y-2">
               <FormInput
-                label="Selected Problem Statement"
+                label="Problem Statement"
                 name="problem_statement"
-                type="select"
+                type="textarea"
                 value={form.problem_statement}
                 onChange={handleChange}
                 error={fieldErrors.problem_statement}
-                placeholder="Select a problem statement"
-                options={[
-                  "Smart Healthcare Assistant",
-                  "Sustainable Campus Tracker",
-                  "Peer-to-Peer Learning Platform",
-                  "Micro-Finance for Students",
-                  "Smart Traffic Management",
-                  "Mental Health & Wellness App",
-                ]}
+                placeholder="Enter your problem statement"
+                rows={4}
                 required
                 color="cyan"
                 index={11}
               />
+              <a
+                href="https://drive.google.com/drive/folders/1s58dONPEVsohDz6q9x8tWKrdIGb2cyAM?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-orbitron tracking-wider text-neon-cyan hover:opacity-90 transition-opacity"
+              >
+                VIEW PROBLEM STATEMENTS
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h4m0 0v4m0-4L10 14" />
+                </svg>
+              </a>
             </div>
 
             <FormInput
