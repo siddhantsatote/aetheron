@@ -253,24 +253,22 @@ export default function IdeathonForm() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <FormInput
-                label="Team Member 1"
+                label="Team Member 1 (Optional)"
                 name="member_1"
                 value={form.member_1}
                 onChange={handleChange}
                 error={fieldErrors.member_1}
                 placeholder="Member name"
-                required
                 color="purple"
                 index={6}
               />
               <FormInput
-                label="Team Member 2"
+                label="Team Member 2 (Optional)"
                 name="member_2"
                 value={form.member_2}
                 onChange={handleChange}
                 error={fieldErrors.member_2}
                 placeholder="Member name"
-                required
                 color="purple"
                 index={7}
               />

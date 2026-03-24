@@ -149,6 +149,24 @@ export default function FlyerMakingForm() {
             </div>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="glassmorphism glow-border-violet rounded-2xl p-6 sm:p-8 mb-6"
+          >
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-violet mb-4">
+              FLYER MAKING TOPICS
+            </h2>
+            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
+              <li>Future Tech</li>
+              <li>Hackathon Promotion</li>
+              <li>AI vs Human</li>
+              <li>A Day Without Internet</li>
+              <li>Your Future Self is Watching You</li>
+            </ol>
+          </motion.div>
+
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
