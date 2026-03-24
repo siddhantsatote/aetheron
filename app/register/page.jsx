@@ -68,6 +68,54 @@ const PencilIcon = () => (
   </svg>
 );
 
+const FlyerIcon = () => (
+  <svg
+    className="w-12 h-12"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3.75 4.5h16.5v15h-16.5v-15zM7.5 8.25h9m-9 3h9m-9 3h6"
+    />
+  </svg>
+);
+
+const VideoIcon = () => (
+  <svg
+    className="w-12 h-12"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 10.5L21 7.5v9l-5.25-3m0 0h-9A2.25 2.25 0 014.5 11.25v-3A2.25 2.25 0 016.75 6h9A2.25 2.25 0 0118 8.25v3A2.25 2.25 0 0115.75 13.5z"
+    />
+  </svg>
+);
+
+const TreasureIcon = () => (
+  <svg
+    className="w-12 h-12"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 9.75h18M4.5 9.75l1.2 9a2.25 2.25 0 002.228 1.95h7.144A2.25 2.25 0 0017.3 18.75l1.2-9M9 9.75V6.75A3 3 0 0112 3.75a3 3 0 013 3v3"
+    />
+  </svg>
+);
+
 const events = [
   {
     title: "IDEATHON",
@@ -116,6 +164,42 @@ const events = [
     borderClass: "glow-border-cyan",
     textClass: "text-neon-cyan",
     btnClass: "glow-btn-cyan",
+  },
+  {
+    title: "FLYER MAKING",
+    description:
+      "Create impactful visual communication with your flyer design skills.",
+    icon: <FlyerIcon />,
+    color: "cyan",
+    href: "/register/flyer-making",
+    date: "Day 3",
+    borderClass: "glow-border-cyan",
+    textClass: "text-neon-cyan",
+    btnClass: "glow-btn-cyan",
+  },
+  {
+    title: "REEL MAKING",
+    description:
+      "Create creative short videos and showcase your storytelling skills.",
+    icon: <VideoIcon />,
+    color: "purple",
+    href: "/register/reel-making",
+    date: "Day 2",
+    borderClass: "glow-border-purple",
+    textClass: "text-neon-purple",
+    btnClass: "glow-btn-purple",
+  },
+  {
+    title: "TECH TREASURE HUNT",
+    description:
+      "Solve clues as a team and race to uncover the final tech treasure.",
+    icon: <TreasureIcon />,
+    color: "magenta",
+    href: "/register/tech-treasure-hunt",
+    date: "Day 2",
+    borderClass: "glow-border-magenta",
+    textClass: "text-neon-magenta",
+    btnClass: "glow-btn-magenta",
   },
 ];
 

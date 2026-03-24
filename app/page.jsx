@@ -164,7 +164,7 @@ const additionalEvents = [
       "Create impactful short-form content that captures innovation in seconds.",
     icon: <VideoIcon />,
     color: "purple",
-    href: "/register",
+    href: "/register/reel-making",
     date: "DAY 2",
   },
   {
@@ -173,7 +173,7 @@ const additionalEvents = [
       "Decode clues, solve technical puzzles, and race to the final discovery.",
     icon: <TreasureIcon />,
     color: "magenta",
-    href: "/register",
+    href: "/register/tech-treasure-hunt",
     date: "DAY 2",
   },
   {
@@ -182,7 +182,7 @@ const additionalEvents = [
       "Design eye-catching flyers that communicate ideas with style and precision.",
     icon: <FlyerIcon />,
     color: "cyan",
-    href: "/register",
+    href: "/register/flyer-making",
     date: "DAY 3",
   },
 ];
