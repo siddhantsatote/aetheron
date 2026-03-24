@@ -9,6 +9,8 @@ import GlowButton from "@/components/GlowButton";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function ReelMakingForm() {
+  const whatsappLink = "https://chat.whatsapp.com/Ela0hxUv4kx2KvDZUMa6l0?mode=gi_t";
+  const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(whatsappLink)}`;
   const { submit, loading, success, error, fieldErrors } =
     useRegistration("reel-making");
   const [form, setForm] = useState({
@@ -18,6 +20,7 @@ export default function ReelMakingForm() {
     phone: "",
     agree: false,
   });
+  const [showPoster, setShowPoster] = useState(true);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -234,6 +237,45 @@ export default function ReelMakingForm() {
               </GlowButton>
             </div>
           </motion.form>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="glassmorphism glow-border-purple rounded-2xl p-6 sm:p-8 mt-6"
+          >
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-purple mb-4">
+              JOIN REEL MAKING WHATSAPP GROUP
+            </h2>
+
+            {showPoster && (
+              <img
+                src="/reel-whatsapp-group.jpg"
+                alt="Reel Making WhatsApp Group"
+                onError={() => setShowPoster(false)}
+                className="w-full max-w-md mx-auto rounded-2xl border border-purple-400/30 mb-6"
+              />
+            )}
+
+            <div className="flex flex-col items-center gap-4">
+              <img
+                src={qrImageUrl}
+                alt="WhatsApp Group QR"
+                className="w-56 h-56 sm:w-64 sm:h-64 rounded-2xl bg-white p-3 border border-purple-400/40"
+              />
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glow-btn-purple px-5 py-3 rounded-xl font-orbitron text-xs text-neon-purple tracking-wider inline-flex items-center gap-2"
+              >
+                JOIN WHATSAPP GROUP
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h4m0 0v4m0-4L10 14" />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
