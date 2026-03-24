@@ -50,10 +50,24 @@ CREATE TABLE IF NOT EXISTS esports_registrations (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Blog Writing registrations
+CREATE TABLE IF NOT EXISTS blog_writing_registrations (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  full_name TEXT NOT NULL,
+  college TEXT NOT NULL,
+  branch_year TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT NOT NULL,
+  domain TEXT NOT NULL,
+  blog_title TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Enable Row Level Security
 ALTER TABLE ideathon_registrations ENABLE ROW LEVEL SECURITY;
 ALTER TABLE hackathon_registrations ENABLE ROW LEVEL SECURITY;
 ALTER TABLE esports_registrations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_writing_registrations ENABLE ROW LEVEL SECURITY;
 
 -- Allow inserts from anon key (public registrations)
 DO $$
@@ -83,6 +97,15 @@ BEGIN
       AND policyname = 'Allow public insert esports'
   ) THEN
     CREATE POLICY "Allow public insert esports" ON esports_registrations FOR INSERT WITH CHECK (true);
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'public'
+      AND tablename = 'blog_writing_registrations'
+      AND policyname = 'Allow public insert blog writing'
+  ) THEN
+    CREATE POLICY "Allow public insert blog writing" ON blog_writing_registrations FOR INSERT WITH CHECK (true);
   END IF;
 END $$;
 
@@ -115,6 +138,15 @@ BEGIN
   ) THEN
     CREATE POLICY "Allow public read esports" ON esports_registrations FOR SELECT USING (true);
   END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'public'
+      AND tablename = 'blog_writing_registrations'
+      AND policyname = 'Allow public read blog writing'
+  ) THEN
+    CREATE POLICY "Allow public read blog writing" ON blog_writing_registrations FOR SELECT USING (true);
+  END IF;
 END $$;
 
 -- ============================================
@@ -130,6 +162,43 @@ BEGIN
   ALTER TABLE ideathon_registrations
     ADD CONSTRAINT ideathon_team_size_check
     CHECK (team_size BETWEEN 1 AND 3) NOT VALID;
+EXCEPTION
+  WHEN undefined_table THEN
+    NULL;
+END $$;
+
+-- Blog Writing: add required fields for compatibility with existing tables
+DO $$
+BEGIN
+  ALTER TABLE blog_writing_registrations
+    ADD COLUMN IF NOT EXISTS branch_year TEXT;
+
+  ALTER TABLE blog_writing_registrations
+    ADD COLUMN IF NOT EXISTS domain TEXT;
+
+  ALTER TABLE blog_writing_registrations
+    ADD COLUMN IF NOT EXISTS blog_title TEXT;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN full_name SET NOT NULL;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN college SET NOT NULL;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN phone SET NOT NULL;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN email SET NOT NULL;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN branch_year SET NOT NULL;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN domain SET NOT NULL;
+
+  ALTER TABLE blog_writing_registrations
+    ALTER COLUMN blog_title SET NOT NULL;
 EXCEPTION
   WHEN undefined_table THEN
     NULL;

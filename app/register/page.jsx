@@ -52,6 +52,22 @@ const GamepadIcon = () => (
   </svg>
 );
 
+const PencilIcon = () => (
+  <svg
+    className="w-12 h-12"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M16.862 4.487l1.687-1.688a2.121 2.121 0 113 3L10.582 16.768a4.5 4.5 0 01-1.897 1.13L6 18.75l.853-2.685a4.5 4.5 0 011.13-1.897L16.862 4.487z"
+    />
+  </svg>
+);
+
 const events = [
   {
     title: "IDEATHON",
@@ -89,6 +105,18 @@ const events = [
     textClass: "text-neon-magenta",
     btnClass: "glow-btn-magenta",
   },
+  {
+    title: "BLOG WRITING",
+    description:
+      "Showcase your writing and technical storytelling skills across your chosen domain.",
+    icon: <PencilIcon />,
+    color: "cyan",
+    href: "/register/blog-writing",
+    date: "Day 1",
+    borderClass: "glow-border-cyan",
+    textClass: "text-neon-cyan",
+    btnClass: "glow-btn-cyan",
+  },
 ];
 
 export default function RegisterHub() {
@@ -115,7 +143,7 @@ export default function RegisterHub() {
           </motion.div>
 
           {/* Event Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {events.map((event, i) => (
               <motion.div
                 key={event.title}

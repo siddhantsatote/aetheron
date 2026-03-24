@@ -54,6 +54,70 @@ const GamepadIcon = () => (
   </svg>
 );
 
+const PencilIcon = () => (
+  <svg
+    className="w-10 h-10"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M16.862 4.487l1.687-1.688a2.121 2.121 0 113 3L10.582 16.768a4.5 4.5 0 01-1.897 1.13L6 18.75l.853-2.685a4.5 4.5 0 011.13-1.897L16.862 4.487z"
+    />
+  </svg>
+);
+
+const VideoIcon = () => (
+  <svg
+    className="w-10 h-10"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 10.5L21 7.5v9l-5.25-3m0 0h-9A2.25 2.25 0 014.5 11.25v-3A2.25 2.25 0 016.75 6h9A2.25 2.25 0 0118 8.25v3A2.25 2.25 0 0115.75 13.5z"
+    />
+  </svg>
+);
+
+const TreasureIcon = () => (
+  <svg
+    className="w-10 h-10"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 9.75h18M4.5 9.75l1.2 9a2.25 2.25 0 002.228 1.95h7.144A2.25 2.25 0 0017.3 18.75l1.2-9M9 9.75V6.75A3 3 0 0112 3.75a3 3 0 013 3v3"
+    />
+  </svg>
+);
+
+const FlyerIcon = () => (
+  <svg
+    className="w-10 h-10"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3.75 4.5h16.5v15h-16.5v-15zM7.5 8.25h9m-9 3h9m-9 3h6"
+    />
+  </svg>
+);
+
 const events = [
   {
     title: "IDEATHON",
@@ -80,6 +144,45 @@ const events = [
     icon: <GamepadIcon />,
     color: "magenta",
     href: "/register/esports",
+    date: "DAY 3",
+  },
+];
+
+const additionalEvents = [
+  {
+    title: "BLOG WRITING",
+    description:
+      "Craft engaging tech stories and share your perspective with clarity and creativity.",
+    icon: <PencilIcon />,
+    color: "cyan",
+    href: "/register/blog-writing",
+    date: "DAY 1",
+  },
+  {
+    title: "REEL MAKING",
+    description:
+      "Create impactful short-form content that captures innovation in seconds.",
+    icon: <VideoIcon />,
+    color: "purple",
+    href: "/register",
+    date: "DAY 2",
+  },
+  {
+    title: "TECH TREASURE HUNT",
+    description:
+      "Decode clues, solve technical puzzles, and race to the final discovery.",
+    icon: <TreasureIcon />,
+    color: "magenta",
+    href: "/register",
+    date: "DAY 2",
+  },
+  {
+    title: "FLYER MAKING",
+    description:
+      "Design eye-catching flyers that communicate ideas with style and precision.",
+    icon: <FlyerIcon />,
+    color: "cyan",
+    href: "/register",
     date: "DAY 3",
   },
 ];
@@ -266,6 +369,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {events.map((event, i) => (
               <EventCard key={event.title} {...event} index={i} />
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+            {additionalEvents.map((event, i) => (
+              <EventCard key={event.title} {...event} index={events.length + i} />
             ))}
           </div>
         </div>
