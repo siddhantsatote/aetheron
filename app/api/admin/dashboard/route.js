@@ -31,6 +31,7 @@ export async function GET(request) {
       flyerRes,
       reelRes,
       treasureRes,
+      blogDriveRes,
     ] = await Promise.all([
       supabase
         .from("ideathon_registrations")
@@ -60,6 +61,10 @@ export async function GET(request) {
         .from("tech_treasure_hunt_registrations")
         .select("*")
         .order("created_at", { ascending: false }),
+      supabase
+        .from("blog_drive_submissions")
+        .select("*")
+        .order("submitted_at", { ascending: false }),
     ]);
 
     const errors = [
@@ -88,6 +93,7 @@ export async function GET(request) {
       toCategory("Flyer Making", flyerRes.data || []),
       toCategory("Reel Making", reelRes.data || []),
       toCategory("Tech Treasure Hunt", treasureRes.data || []),
+      toCategory("Blog Drive Submissions", blogDriveRes.data || []),
     ];
 
     const total = categories.reduce((sum, category) => sum + category.count, 0);
