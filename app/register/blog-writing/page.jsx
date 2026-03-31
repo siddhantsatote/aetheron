@@ -6,6 +6,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
+import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function BlogWritingForm() {
@@ -36,6 +37,20 @@ export default function BlogWritingForm() {
     const { agree, ...data } = form;
     await submit(data);
   };
+
+  const rules = [
+    "Eligibility: Open to all students.",
+    "Participation: Individual participation only.",
+    "Registration: Participants must register before the given deadline.",
+    "Domains: Participants must choose any one domain from the provided list.",
+    "Mode: The competition will be conducted using laptops. Participants must bring their own device.",
+    "Time Limit: As announced during the event.",
+    "Word Limit: Maximum 600 words.",
+    "Plagiarism & AI Usage: Strictly prohibited. The content must be original. Any plagiarism or use of AI-generated content will lead to disqualification.",
+    "Internet Usage: Use of the internet during the competition is not allowed.",
+    "Judging Criteria: Based on creativity, clarity, relevance to the domain and originality.",
+    "Decision: Judge's decision will be final.",
+  ];
 
   if (success) {
     return (
@@ -151,6 +166,9 @@ export default function BlogWritingForm() {
               </p>
             </div>
           </motion.div>
+
+          {/* Rules Accordion */}
+          <RulesAccordion rules={rules} color="emerald" title="Event Rules & Guidelines" />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -290,29 +308,6 @@ export default function BlogWritingForm() {
             </div>
           </motion.form>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="glassmorphism glow-border-emerald rounded-2xl p-6 sm:p-8 mt-6"
-          >
-            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-emerald mb-4">
-              RULES &amp; REGULATIONS
-            </h2>
-            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
-              <li>Eligibility: Open to all students.</li>
-              <li>Participation: Individual participation only.</li>
-              <li>Registration: Participants must register before the given deadline.</li>
-              <li>Domains: Participants must choose any one domain from the provided list.</li>
-              <li>Mode: The competition will be conducted using laptops. Participants must bring their own device.</li>
-              <li>Time Limit: As announced during the event.</li>
-              <li>Word Limit: Maximum 600 words.</li>
-              <li>Plagiarism &amp; AI Usage: Strictly prohibited. The content must be original. Any plagiarism or use of AI-generated content will lead to disqualification.</li>
-              <li>Internet Usage: Use of the internet during the competition is not allowed.</li>
-              <li>Judging Criteria: Based on creativity, clarity, relevance to the domain and originality.</li>
-              <li>Decision: Judge&apos;s decision will be final.</li>
-            </ol>
-          </motion.div>
         </div>
       </section>
     </div>

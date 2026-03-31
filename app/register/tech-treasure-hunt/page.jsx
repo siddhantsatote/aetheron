@@ -6,6 +6,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
+import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function TechTreasureHuntForm() {
@@ -36,6 +37,17 @@ export default function TechTreasureHuntForm() {
     const { agree, ...data } = form;
     await submit(data);
   };
+
+  const rules = [
+    "Team Size: Minimum 2, Maximum 4 members per team.",
+    "Reporting Time: The event begins at 9:00 AM sharp. Late arrivals will be disqualified.",
+    "Duration: The treasure hunt will run for the entire day until 6:00 PM.",
+    "Use of Technology: Participants must use their mobile devices and QR scanning abilities.",
+    "Fair Play: No cheating, hacking, or using unfair means. Teams found violating will be disqualified.",
+    "Clue Solving: Teams must solve clues in sequence. Skipping clues is not allowed.",
+    "Final Destination: First team to reach the final destination wins.",
+    "Judging: Based on time taken, clue-solving efficiency, and teamwork.",
+  ];
 
   if (success) {
     return (
@@ -150,6 +162,9 @@ export default function TechTreasureHuntForm() {
               </p>
             </div>
           </motion.div>
+
+          {/* Rules Accordion */}
+          <RulesAccordion rules={rules} color="red" title="Event Rules & Guidelines" />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

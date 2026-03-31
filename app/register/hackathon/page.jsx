@@ -6,6 +6,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
+import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 const teamSizes = ["6"];
@@ -55,6 +56,20 @@ export default function HackathonForm() {
       .join(", ");
     await submit(data);
   };
+
+  const rules = [
+    "Team must have 6 members, including at least 1 female member.",
+    "Teams must work on the pre-selected problem statement; changes are not allowed.",
+    "Software Hackathon duration is typically 6 hours of continuous coding.",
+    "Core solution must be developed during the event; plagiarism leads to disqualification.",
+    "Mentors/judges evaluate understanding, tech stack, demo/prototype, and impact.",
+    "Submission must include source code (GitHub/repo), pitch deck, and working demo/prototype.",
+    "Source code must be pushed to GitHub before deadline, otherwise disqualification may apply.",
+    "No unfair practices or unauthorized help; follow venue rules and schedule.",
+    "Final pitch: ~5 minutes presentation + 3 minutes Q&A.",
+    "Winning criteria: innovation, technical depth, implementation, scalability, and impact.",
+    "Prizes include cash rewards, certificates, and possible incubation opportunities.",
+  ];
 
   if (success) {
     return (
@@ -172,6 +187,9 @@ export default function HackathonForm() {
               </p>
             </div>
           </motion.div>
+
+          {/* Rules Accordion */}
+          <RulesAccordion rules={rules} color="cyan" title="Hackathon Rules & Guidelines" />
 
           {/* Form */}
           <motion.form
@@ -377,29 +395,6 @@ export default function HackathonForm() {
             </div>
           </motion.form>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8 mt-6"
-          >
-            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-cyan mb-4">
-              HACKATHON — RULES &amp; GUIDELINES
-            </h2>
-            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
-              <li>Team must have 6 members, including at least 1 female member.</li>
-              <li>Teams must work on the pre-selected problem statement; changes are not allowed.</li>
-              <li>Software Hackathon duration is typically 6 hours of continuous coding.</li>
-              <li>Core solution must be developed during the event; plagiarism leads to disqualification.</li>
-              <li>Mentors/judges evaluate understanding, tech stack, demo/prototype, and impact.</li>
-              <li>Submission must include source code (GitHub/repo), pitch deck, and working demo/prototype.</li>
-              <li>Source code must be pushed to GitHub before deadline, otherwise disqualification may apply.</li>
-              <li>No unfair practices or unauthorized help; follow venue rules and schedule.</li>
-              <li>Final pitch: ~5 minutes presentation + 3 minutes Q&amp;A.</li>
-              <li>Winning criteria: innovation, technical depth, implementation, scalability, and impact.</li>
-              <li>Prizes include cash rewards, certificates, and possible incubation opportunities.</li>
-            </ol>
-          </motion.div>
         </div>
       </section>
     </div>

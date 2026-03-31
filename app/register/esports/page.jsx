@@ -6,6 +6,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
+import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 const deviceTypes = ["Android", "iOS"];
@@ -50,6 +51,17 @@ export default function EsportsForm() {
     delete data.squad_member_3;
     await submit(data);
   };
+
+  const rules = [
+    "Team Size: Squad format (4 players per team).",
+    "Game Mode: BGMI (Battlegrounds Mobile India) only.",
+    "Device: Players must bring their own mobile devices (Android/iOS).",
+    "Fair Play: Use of hacks, mods, or any unfair means leads to immediate disqualification.",
+    "Connectivity: Players are responsible for their own internet connection.",
+    "Registration: All squad members must be registered before the deadline.",
+    "Match Format: Matches will follow tournament rules announced on the day.",
+    "Decision: Organizers' decision is final in all disputes.",
+  ];
 
   if (success) {
     return (
@@ -167,6 +179,9 @@ export default function EsportsForm() {
               </p>
             </div>
           </motion.div>
+
+          {/* Rules Accordion */}
+          <RulesAccordion rules={rules} color="amber" title="Tournament Rules & Guidelines" />
 
           {/* Form */}
           <motion.form

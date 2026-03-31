@@ -6,6 +6,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
+import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function FlyerMakingForm() {
@@ -33,6 +34,12 @@ export default function FlyerMakingForm() {
     const { agree, ...data } = form;
     await submit(data);
   };
+
+  const rules = [
+    "Maximum no. of participants is 1.",
+    "Flyer should be made digitally and should include university logo.",
+    "Each participant should take any 1 topic for flyer and explain his/her flyer in 3 min.",
+  ];
 
   if (success) {
     return (
@@ -149,6 +156,9 @@ export default function FlyerMakingForm() {
             </div>
           </motion.div>
 
+          {/* Rules Accordion */}
+          <RulesAccordion rules={rules} color="violet" title="Event Rules & Guidelines" />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -253,21 +263,6 @@ export default function FlyerMakingForm() {
             </div>
           </motion.form>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="glassmorphism glow-border-violet rounded-2xl p-6 sm:p-8 mt-6"
-          >
-            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-violet mb-4">
-              RULES
-            </h2>
-            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
-              <li>Maximum no. of participants is 1.</li>
-              <li>Flyer should be made digitally and should include university logo.</li>
-              <li>Each participant should take any 1 topic for flyer and explain his/her flyer in 3 min.</li>
-            </ol>
-          </motion.div>
         </div>
       </section>
     </div>

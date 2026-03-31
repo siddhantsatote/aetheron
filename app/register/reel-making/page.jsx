@@ -6,6 +6,7 @@ import Link from "next/link";
 import ParticleBackground from "@/components/ParticleBackground";
 import FormInput from "@/components/FormInput";
 import GlowButton from "@/components/GlowButton";
+import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function ReelMakingForm() {
@@ -36,6 +37,16 @@ export default function ReelMakingForm() {
     const { agree, ...data } = form;
     await submit(data);
   };
+
+  const rules = [
+    "Reporting Time: The competition begins at 9:00 AM sharp. Participants arriving after 9:00 AM will not be permitted to participate and will be considered disqualified. Punctuality is mandatory.",
+    "Submission Deadline: All reels must be fully completed and submitted by 6:00 PM sharp. Submissions received after the deadline will not be accepted or evaluated under any circumstances.",
+    "Theme: The theme of the reel must be strictly related to the Tech Fest. The exact topic will be announced on the spot at the commencement of the competition. Participants are expected to work solely based on the given topic. Entries that do not reflect the assigned topic will be disqualified without review.",
+    "On-Site Production Only: Participants must shoot, edit, and finalise their reel entirely within the competition hours (9:00 AM – 6:00 PM). Pre-recorded or pre-edited content is strictly not allowed.",
+    "No External Material: The use of any external, pre-prepared, or third-party material — including stock footage, pre-downloaded audio, or template overlays — is strictly prohibited. All content must be original and created on the day.",
+    "Submission Process: Final entries must be submitted via the official email ID provided at the time of registration, before the deadline. Include your name, registration number, and institution in the submission email.",
+    "Fair Play: Any violation of the above rules, use of unfair means, plagiarism, or misconduct will result in immediate disqualification. The decisions of the organising committee are final and binding.",
+  ];
 
   if (success) {
     return (
@@ -152,6 +163,9 @@ export default function ReelMakingForm() {
             </div>
           </motion.div>
 
+          {/* Rules Accordion */}
+          <RulesAccordion rules={rules} color="rose" title="Event Rules & Guidelines" />
+
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
@@ -237,40 +251,6 @@ export default function ReelMakingForm() {
               </GlowButton>
             </div>
           </motion.form>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="glassmorphism glow-border-rose rounded-2xl p-6 sm:p-8 mt-6"
-          >
-            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-rose mb-4">
-              OFFICIAL RULES &amp; GUIDELINES
-            </h2>
-            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
-              <li>
-                Reporting Time: The competition begins at 9:00 AM sharp. Participants arriving after 9:00 AM will not be permitted to participate and will be considered disqualified. Punctuality is mandatory.
-              </li>
-              <li>
-                Submission Deadline: All reels must be fully completed and submitted by 6:00 PM sharp. Submissions received after the deadline will not be accepted or evaluated under any circumstances.
-              </li>
-              <li>
-                Theme: The theme of the reel must be strictly related to the Tech Fest. The exact topic will be announced on the spot at the commencement of the competition. Participants are expected to work solely based on the given topic. Entries that do not reflect the assigned topic will be disqualified without review.
-              </li>
-              <li>
-                On-Site Production Only: Participants must shoot, edit, and finalise their reel entirely within the competition hours (9:00 AM – 6:00 PM). Pre-recorded or pre-edited content is strictly not allowed.
-              </li>
-              <li>
-                No External Material: The use of any external, pre-prepared, or third-party material — including stock footage, pre-downloaded audio, or template overlays — is strictly prohibited. All content must be original and created on the day.
-              </li>
-              <li>
-                Submission Process: Final entries must be submitted via the official email ID provided at the time of registration, before the deadline. Include your name, registration number, and institution in the submission email.
-              </li>
-              <li>
-                Fair Play: Any violation of the above rules, use of unfair means, plagiarism, or misconduct will result in immediate disqualification. The decisions of the organising committee are final and binding.
-              </li>
-            </ol>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
