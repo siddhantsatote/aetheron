@@ -23,6 +23,11 @@ export default function BlogWritingForm() {
     agree: false,
   });
 
+  const [driveName, setDriveName] = useState("");
+  const [driveLink, setDriveLink] = useState("");
+  const [driveSuccess, setDriveSuccess] = useState("");
+  const [driveError, setDriveError] = useState("");
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setForm((prev) => ({
@@ -36,6 +41,47 @@ export default function BlogWritingForm() {
     if (!form.agree) return;
     const { agree, ...data } = form;
     await submit(data);
+  };
+
+  const handleDriveSubmit = async (e) => {
+    e.preventDefault();
+    setDriveSuccess("");
+    setDriveError("");
+
+    if (!driveName.trim() || !driveLink.trim()) {
+      setDriveError("Both name and Google Drive link are required.");
+      return;
+    }
+
+    const url = driveLink.trim();
+    if (!/^https?:\/\//i.test(url)) {
+      setDriveError("Please enter a valid URL starting with http:// or https://");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/blog-drive", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ full_name: driveName.trim(), drive_link: url }),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        setDriveError(
+          errorData.message || "Failed to submit drive link. Please try again."
+        );
+        return;
+      }
+
+      setDriveSuccess("Drive link submitted successfully!");
+      setDriveName("");
+      setDriveLink("");
+    } catch (err) {
+      setDriveError("Network error. Please try again later.");
+    }
   };
 
   const rules = [
@@ -302,6 +348,55 @@ export default function BlogWritingForm() {
                 className="w-full"
               >
                 SUBMIT BLOG
+              </GlowButton>
+            </div>
+          </motion.form>
+
+          <motion.form
+            onSubmit={handleDriveSubmit}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+            className="glassmorphism glow-border-emerald rounded-2xl p-6 sm:p-8 mt-6"
+          >
+            <h2 className="font-orbitron text-lg sm:text-xl font-bold neon-emerald mb-4">
+              Submit Google Drive Link
+            </h2>
+            {driveError && (
+              <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-3 text-red-400 text-sm">
+                {driveError}
+              </div>
+            )}
+            {driveSuccess && (
+              <div className="bg-emerald-500/10 border border-emerald-500/50 rounded-lg p-3 text-emerald-200 text-sm">
+                {driveSuccess}
+              </div>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <FormInput
+                label="Your Name"
+                name="driveName"
+                value={driveName}
+                onChange={(e) => setDriveName(e.target.value)}
+                placeholder="Enter your name"
+                color="emerald"
+                index={100}
+              />
+              <FormInput
+                label="Google Drive Link"
+                name="driveLink"
+                value={driveLink}
+                onChange={(e) => setDriveLink(e.target.value)}
+                placeholder="https://drive.google.com/..."
+                color="emerald"
+                index={101}
+              />
+            </div>
+
+            <div className="pt-2">
+              <GlowButton type="submit" color="emerald" className="w-full">
+                SUBMIT DRIVE LINK
               </GlowButton>
             </div>
           </motion.form>
