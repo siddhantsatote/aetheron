@@ -43,13 +43,11 @@ export default function BlogWritingForm() {
     "Participation: Individual participation only.",
     "Registration: Participants must register before the given deadline.",
     "Domains: Participants must choose any one domain from the provided list.",
-    "Mode: The competition will be conducted using laptops. Participants must bring their own device.",
-    "Time Limit: As announced during the event.",
+    "Submission: Blogs must be submitted through the provided Google Form within the given deadline.",
     "Word Limit: Maximum 600 words.",
     "Plagiarism & AI Usage: Strictly prohibited. The content must be original. Any plagiarism or use of AI-generated content will lead to disqualification.",
-    "Internet Usage: Use of the internet during the competition is not allowed.",
-    "Judging Criteria: Based on creativity, clarity, relevance to the domain and originality.",
-    "Decision: Judge's decision will be final.",
+    "Judging Criteria: Based on originality, creativity and alignment with the chosen domain.",
+    "Decision: Judge’s decision will be final.",
   ];
 
   if (success) {

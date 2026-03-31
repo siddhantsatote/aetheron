@@ -181,7 +181,11 @@ export default function IdeathonForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="purple" title="Event Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="purple"
+            title="Event Rules & Guidelines"
+          />
 
           {/* Form */}
           <motion.form
@@ -336,6 +340,3 @@ export default function IdeathonForm() {
     </div>
   );
 }
-
-
-
