@@ -150,13 +150,12 @@ const eventRules = [
       "Participation: Individual participation only.",
       "Registration: Participants must register before the given deadline.",
       "Domains: Participants must choose any one domain from the provided list.",
-      "Mode: The competition will be conducted using laptops. Participants must bring their own device.",
-      "Time Limit: As announced during the event.",
+      "Submission: Blogs must be submitted through the provided Google Form within thegiven deadline.",
       "Word Limit: Maximum 600 words.",
-      "Plagiarism & AI Usage: Strictly prohibited. The content must be original. Any plagiarism or use of AI-generated content will lead to disqualification.",
-      "Internet Usage: Use of the internet during the competition is not allowed.",
-      "Judging Criteria: Based on creativity, clarity, relevance to the domain and originality.",
-      "Decision: Judge's decision will be final.",
+      "Plagiarism & AI Usage: Strictly prohibited. The content must be original. Any plagiarism",
+      "or use of AI-generated content will lead to disqualification.",
+      "Judging Criteria: Based on originality, creativity and alignment with the chosen domain.",
+      "Decision: Judge’s decision will be final.",
     ],
   },
   {
@@ -435,6 +434,21 @@ export default function Home() {
             {additionalEvents.map((event, i) => (
               <EventCard key={event.title} {...event} index={events.length + i} />
             ))}
+          </div>
+
+          <div className="mt-10 glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8">
+            <h3 className="font-orbitron text-xl font-bold neon-cyan mb-3">BLOG WRITING RULES</h3>
+            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
+              <li>Eligibility: Open to all students.</li>
+              <li>Participation: Individual participation only.</li>
+              <li>Registration: Participants must register before the given deadline.</li>
+              <li>Domains: Participants must choose any one domain from the provided list.</li>
+              <li>Submission: Blogs must be submitted through the provided Google Form within the given deadline.</li>
+              <li>Word Limit: Maximum 600 words.</li>
+              <li>Plagiarism &amp; AI Usage: Strictly prohibited. The content must be original.</li>
+              <li>Judging Criteria: Based on originality, creativity and alignment with the chosen domain.</li>
+              <li>Decision: Judges’ decision will be final.</li>
+            </ol>
           </div>
         </div>
       </section>
