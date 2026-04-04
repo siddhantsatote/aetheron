@@ -15,12 +15,24 @@ import {
   PhotoIcon,
 } from "@heroicons/react/24/outline";
 
-const LightbulbIcon = () => <LightBulbIcon className="w-10 h-10" strokeWidth={1.8} />;
-const CodeIcon = () => <CodeBracketIcon className="w-10 h-10" strokeWidth={1.8} />;
-const GamepadIcon = () => <DevicePhoneMobileIcon className="w-10 h-10" strokeWidth={1.8} />;
-const PencilIcon = () => <PencilSquareIcon className="w-10 h-10" strokeWidth={1.8} />;
-const VideoIcon = () => <VideoCameraIcon className="w-10 h-10" strokeWidth={1.8} />;
-const TreasureIcon = () => <PuzzlePieceIcon className="w-10 h-10" strokeWidth={1.8} />;
+const LightbulbIcon = () => (
+  <LightBulbIcon className="w-10 h-10" strokeWidth={1.8} />
+);
+const CodeIcon = () => (
+  <CodeBracketIcon className="w-10 h-10" strokeWidth={1.8} />
+);
+const GamepadIcon = () => (
+  <DevicePhoneMobileIcon className="w-10 h-10" strokeWidth={1.8} />
+);
+const PencilIcon = () => (
+  <PencilSquareIcon className="w-10 h-10" strokeWidth={1.8} />
+);
+const VideoIcon = () => (
+  <VideoCameraIcon className="w-10 h-10" strokeWidth={1.8} />
+);
+const TreasureIcon = () => (
+  <PuzzlePieceIcon className="w-10 h-10" strokeWidth={1.8} />
+);
 const FlyerIcon = () => <PhotoIcon className="w-10 h-10" strokeWidth={1.8} />;
 
 const events = [
@@ -203,7 +215,6 @@ export default function Home() {
 
       {/* ===== HERO — FULL VIEWPORT ===== */}
       <section className="relative z-10 h-dvh w-full overflow-hidden flex flex-col md:block">
-
         {/* ===== MOBILE LAYOUT (stacked) ===== */}
         <div className="flex flex-col items-center px-6 pt-20 pb-4 md:hidden h-dvh">
           {/* Theme text */}
@@ -225,7 +236,12 @@ export default function Home() {
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.1 }}
+            transition={{
+              type: "spring",
+              stiffness: 80,
+              damping: 14,
+              delay: 0.1,
+            }}
             className="flex-1 flex items-center justify-center py-2"
           >
             <motion.img
@@ -245,12 +261,20 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="self-start mb-4"
           >
-            <p className="font-orbitron text-xl font-extrabold text-white italic">When:</p>
-            <p className="font-orbitron text-xl font-black text-white mt-1 tracking-wide">From 9th April to 11th April</p>
-            <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">3-Day Event</p>
+            <p className="font-orbitron text-xl font-extrabold text-white italic">
+              When:
+            </p>
+            <p className="font-orbitron text-xl font-black text-white mt-1 tracking-wide">
+              From 9th April to 11th April
+            </p>
+            <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">
+              3-Day Event
+            </p>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-neon-cyan text-lg">📍</span>
-              <p className="font-orbitron text-sm font-semibold text-slate-300 italic">Your College Campus</p>
+              <p className="font-orbitron text-sm font-semibold text-slate-300 italic">
+                Your College Campus
+              </p>
             </div>
           </motion.div>
 
@@ -286,7 +310,9 @@ export default function Home() {
             transition={{ delay: 1.2 }}
             className="mt-auto pt-4 text-center"
           >
-            <p className="text-slate-500 text-[10px] font-orbitron tracking-wider">AETHERON TECH FEST © 2026</p>
+            <p className="text-slate-500 text-[10px] font-orbitron tracking-wider">
+              AETHERON TECH FEST © 2026
+            </p>
           </motion.div>
         </div>
 
@@ -314,12 +340,20 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.8 }}
               >
-                <p className="font-orbitron text-2xl font-extrabold text-white italic">When:</p>
-                <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">From 9th April to 11th April</p>
-                <p className="font-orbitron text-4xl font-black text-white mt-1 tracking-wide">3-Day Event</p>
+                <p className="font-orbitron text-2xl font-extrabold text-white italic">
+                  When:
+                </p>
+                <p className="font-orbitron text-2xl font-black text-white mt-1 tracking-wide">
+                  From 9th April to 11th April
+                </p>
+                <p className="font-orbitron text-4xl font-black text-white mt-1 tracking-wide">
+                  3-Day Event
+                </p>
                 <div className="flex items-center gap-2 mt-2">
                   <span className="text-neon-cyan text-lg">📍</span>
-                  <p className="font-orbitron text-base font-semibold text-slate-300 italic">Your College Campus</p>
+                  <p className="font-orbitron text-base font-semibold text-slate-300 italic">
+                    Your College Campus
+                  </p>
                 </div>
               </motion.div>
 
@@ -354,7 +388,12 @@ export default function Home() {
           <motion.div
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.1 }}
+            transition={{
+              type: "spring",
+              stiffness: 80,
+              damping: 14,
+              delay: 0.1,
+            }}
           >
             <motion.img
               src="/logo.png"
@@ -374,7 +413,9 @@ export default function Home() {
           transition={{ delay: 1.3, duration: 0.6 }}
           className="hidden md:flex absolute bottom-6 left-0 right-0 z-20 items-center justify-center px-14"
         >
-          <span className="text-slate-500 text-[10px] font-orbitron tracking-wider">AETHERON TECH FEST © 2026</span>
+          <span className="text-slate-500 text-[10px] font-orbitron tracking-wider">
+            AETHERON TECH FEST © 2026
+          </span>
         </motion.div>
       </section>
 
@@ -391,7 +432,8 @@ export default function Home() {
               EVENT RULES AT A GLANCE
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Expand each competition to read the full rules before you register. All contests follow a clear, fair structure.
+              Expand each competition to read the full rules before you
+              register. All contests follow a clear, fair structure.
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -420,7 +462,8 @@ export default function Home() {
               THREE DAYS. THREE BATTLES.
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Choose your arena and prove your worth. Each event is designed to challenge your skills and push your limits.
+              Choose your arena and prove your worth. Each event is designed to
+              challenge your skills and push your limits.
             </p>
           </motion.div>
 
@@ -432,24 +475,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
             {additionalEvents.map((event, i) => (
-              <EventCard key={event.title} {...event} index={events.length + i} />
+              <EventCard
+                key={event.title}
+                {...event}
+                index={events.length + i}
+              />
             ))}
           </div>
 
-          <div className="mt-10 glassmorphism glow-border-cyan rounded-2xl p-6 sm:p-8">
-            <h3 className="font-orbitron text-xl font-bold neon-cyan mb-3">BLOG WRITING RULES</h3>
-            <ol className="list-decimal list-inside space-y-2 text-slate-300 text-sm sm:text-base">
-              <li>Eligibility: Open to all students.</li>
-              <li>Participation: Individual participation only.</li>
-              <li>Registration: Participants must register before the given deadline.</li>
-              <li>Domains: Participants must choose any one domain from the provided list.</li>
-              <li>Submission: Blogs must be submitted through the provided Google Form within the given deadline.</li>
-              <li>Word Limit: Maximum 600 words.</li>
-              <li>Plagiarism &amp; AI Usage: Strictly prohibited. The content must be original.</li>
-              <li>Judging Criteria: Based on originality, creativity and alignment with the chosen domain.</li>
-              <li>Decision: Judges’ decision will be final.</li>
-            </ol>
-          </div>
         </div>
       </section>
     </div>

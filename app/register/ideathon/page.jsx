@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -11,7 +10,7 @@ import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 const domains = ["Healthcare", "Education", "Environment", "FinTech", "Other"];
-const teamSizes = ["1", "2", "3", "4"];
+const teamSizes = ["1", "2", "3"];
 
 export default function IdeathonForm() {
   const { submit, loading, success, error, fieldErrors, reset } =

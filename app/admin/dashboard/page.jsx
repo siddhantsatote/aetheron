@@ -43,7 +43,9 @@ export default function AdminDashboardPage() {
     setError("");
 
     try {
-      const response = await fetch("/api/admin/dashboard", { cache: "no-store" });
+      const response = await fetch("/api/admin/dashboard", {
+        cache: "no-store",
+      });
       const result = await response.json();
 
       if (response.status === 401) {
@@ -81,10 +83,11 @@ export default function AdminDashboardPage() {
   }, [data.categories, activeCategory]);
 
   const categoryCounts = useMemo(
-    () => (data.categories || []).map((category) => ({
-      label: category.label,
-      count: category.count,
-    })),
+    () =>
+      (data.categories || []).map((category) => ({
+        label: category.label,
+        count: category.count,
+      })),
     [data],
   );
 
@@ -94,8 +97,9 @@ export default function AdminDashboardPage() {
   };
 
   const selectedCategory =
-    (data.categories || []).find((category) => category.label === activeCategory) ||
-    null;
+    (data.categories || []).find(
+      (category) => category.label === activeCategory,
+    ) || null;
 
   return (
     <div className="relative min-h-screen grid-pattern">
@@ -144,8 +148,12 @@ export default function AdminDashboardPage() {
             transition={{ delay: 0.1 }}
             className="glassmorphism glow-border-cyan rounded-2xl p-5"
           >
-            <p className="font-orbitron text-sm text-slate-400">TOTAL REGISTRATIONS</p>
-            <p className="font-orbitron text-3xl text-neon-cyan mt-1">{data.total || 0}</p>
+            <p className="font-orbitron text-sm text-slate-400">
+              TOTAL REGISTRATIONS
+            </p>
+            <p className="font-orbitron text-3xl text-neon-cyan mt-1">
+              {data.total || 0}
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -157,14 +165,20 @@ export default function AdminDashboardPage() {
                 transition={{ delay: 0.15 + index * 0.05 }}
                 className="glassmorphism rounded-xl p-4 border border-slate-700"
               >
-                <p className="text-xs text-slate-400 uppercase tracking-wider">{item.label}</p>
-                <p className="font-orbitron text-xl text-slate-100 mt-2">{item.count}</p>
+                <p className="text-xs text-slate-400 uppercase tracking-wider">
+                  {item.label}
+                </p>
+                <p className="font-orbitron text-xl text-slate-100 mt-2">
+                  {item.count}
+                </p>
               </motion.div>
             ))}
           </div>
 
           {loading ? (
-            <div className="text-slate-400 text-sm">Loading dashboard data...</div>
+            <div className="text-slate-400 text-sm">
+              Loading dashboard data...
+            </div>
           ) : (
             <div className="space-y-6">
               <div className="glassmorphism rounded-2xl p-4 border border-slate-700">
@@ -197,12 +211,18 @@ export default function AdminDashboardPage() {
                   className="glassmorphism rounded-2xl p-5 border border-slate-700"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <h2 className="font-orbitron text-lg text-neon-cyan">{selectedCategory.label}</h2>
-                    <span className="text-slate-400 text-sm">{selectedCategory.count} entries</span>
+                    <h2 className="font-orbitron text-lg text-neon-cyan">
+                      {selectedCategory.label}
+                    </h2>
+                    <span className="text-slate-400 text-sm">
+                      {selectedCategory.count} entries
+                    </span>
                   </div>
 
                   {selectedCategory.rows.length === 0 ? (
-                    <p className="text-slate-500 text-sm">No registrations yet.</p>
+                    <p className="text-slate-500 text-sm">
+                      No registrations yet.
+                    </p>
                   ) : (
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
@@ -214,17 +234,25 @@ export default function AdminDashboardPage() {
                         </thead>
                         <tbody>
                           {selectedCategory.rows.map((row) => (
-                            <tr key={row.id} className="border-b border-slate-800 align-top">
+                            <tr
+                              key={row.id}
+                              className="border-b border-slate-800 align-top"
+                            >
                               <td className="py-3 pr-4 whitespace-nowrap text-slate-400">
                                 {formatDate(row.created_at)}
                               </td>
                               <td className="py-3 pr-4">
                                 <div className="space-y-1">
                                   {Object.entries(row)
-                                    .filter(([key]) => key !== "id" && key !== "created_at")
+                                    .filter(
+                                      ([key]) =>
+                                        key !== "id" && key !== "created_at",
+                                    )
                                     .map(([key, value]) => (
                                       <div key={key} className="text-slate-300">
-                                        <span className="text-slate-500">{key.replaceAll("_", " ")}: </span>
+                                        <span className="text-slate-500">
+                                          {key.replaceAll("_", " ")}:{" "}
+                                        </span>
                                         {key === "team_members" ? (
                                           <pre className="mt-1 bg-navy-900/60 border border-slate-800 rounded p-2 text-xs whitespace-pre-wrap text-slate-300">
                                             {renderValue(key, value)}

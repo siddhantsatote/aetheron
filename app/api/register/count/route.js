@@ -4,7 +4,15 @@ import { getSupabase } from "@/lib/supabase";
 export async function GET() {
   try {
     const supabase = getSupabase();
-    const [ideathon, hackathon, esports, blogWriting, flyerMaking, reelMaking, techTreasureHunt] = await Promise.all([
+    const [
+      ideathon,
+      hackathon,
+      esports,
+      blogWriting,
+      flyerMaking,
+      reelMaking,
+      techTreasureHunt,
+    ] = await Promise.all([
       supabase
         .from("ideathon_registrations")
         .select("id", { count: "exact", head: true }),

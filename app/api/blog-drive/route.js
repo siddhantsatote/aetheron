@@ -35,12 +35,12 @@ export async function POST(request) {
       );
     }
 
-    return NextResponse.json({ message: "Drive link saved", data: data?.[0] }, { status: 201 });
+    return NextResponse.json(
+      { message: "Drive link saved", data: data?.[0] },
+      { status: 201 },
+    );
   } catch (err) {
     console.error("blog-drive server error", err);
-    return NextResponse.json(
-      { message: "Server error" },
-      { status: 500 },
-    );
+    return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }

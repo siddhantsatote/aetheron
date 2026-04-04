@@ -74,21 +74,25 @@ export default function EventCard({
       transition={{ duration: 0.5, delay: index * 0.15 }}
     >
       <Link href={href} className="block group h-full">
-        <div
-          className="relative overflow-hidden h-full rounded-[26px] border border-white/10 bg-[linear-gradient(150deg,rgba(27,31,58,0.62)_0%,rgba(10,14,30,0.86)_60%,rgba(8,11,24,0.94)_100%)] backdrop-blur-xl p-8 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-[0_18px_48px_rgba(24,201,255,0.16)]"
-        >
-          <div className={`absolute top-0 left-6 right-6 h-[2px] rounded-full bg-gradient-to-r ${styles.accentLine}`} />
+        <div className="relative overflow-hidden h-full rounded-[26px] border border-white/10 bg-[linear-gradient(150deg,rgba(27,31,58,0.62)_0%,rgba(10,14,30,0.86)_60%,rgba(8,11,24,0.94)_100%)] backdrop-blur-xl p-8 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-[0_18px_48px_rgba(24,201,255,0.16)]">
+          <div
+            className={`absolute top-0 left-6 right-6 h-[2px] rounded-full bg-gradient-to-r ${styles.accentLine}`}
+          />
 
           {date && (
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wider mb-8">
               <span className={`h-2 w-2 rounded-full ${styles.badgeDot}`} />
-              <span className={`${styles.badgeText}`}>{date.toUpperCase()}</span>
+              <span className={`${styles.badgeText}`}>
+                {date.toUpperCase()}
+              </span>
             </div>
           )}
 
           {/* Icon */}
           <div className="flex justify-start mb-7">
-            <div className={`h-16 w-16 rounded-2xl border flex items-center justify-center [&>svg]:h-8 [&>svg]:w-8 ${styles.iconTile} shadow-[0_10px_24px_rgba(0,0,0,0.35)]`}>
+            <div
+              className={`h-16 w-16 rounded-2xl border flex items-center justify-center [&>svg]:h-8 [&>svg]:w-8 ${styles.iconTile} shadow-[0_10px_24px_rgba(0,0,0,0.35)]`}
+            >
               {icon}
             </div>
           </div>
@@ -109,8 +113,18 @@ export default function EventCard({
               className={`inline-flex items-center gap-2 rounded-full px-7 py-3 font-sans text-sm font-bold tracking-wide text-white bg-gradient-to-r ${styles.button} shadow-[0_10px_28px_rgba(14,182,255,0.28)] transition-all group-hover:brightness-110 group-hover:shadow-[0_14px_34px_rgba(14,182,255,0.4)]`}
             >
               REGISTER
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m0 0l-5-5m5 5l-5 5" />
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 12h14m0 0l-5-5m5 5l-5 5"
+                />
               </svg>
             </span>
           </div>

@@ -10,7 +10,8 @@ import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function TechTreasureHuntForm() {
-  const whatsappLink = "https://chat.whatsapp.com/DJ6k8znu2cyCUgFqOrZOcv?mode=gi_t";
+  const whatsappLink =
+    "https://chat.whatsapp.com/DJ6k8znu2cyCUgFqOrZOcv?mode=gi_t";
   const { submit, loading, success, error, fieldErrors } =
     useRegistration("tech-treasure-hunt");
   const [form, setForm] = useState({
@@ -164,7 +165,11 @@ export default function TechTreasureHuntForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="red" title="Event Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="red"
+            title="Event Rules & Guidelines"
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +201,9 @@ export default function TechTreasureHuntForm() {
             )}
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Lead (Required)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">
+                Team Lead (Required)
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 <FormInput
                   label="Name"
@@ -234,7 +241,9 @@ export default function TechTreasureHuntForm() {
             </div>
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Member 2 (Required)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">
+                Team Member 2 (Required)
+              </h2>
               <div className="grid grid-cols-1 gap-5">
                 <FormInput
                   label="Name"
@@ -250,7 +259,9 @@ export default function TechTreasureHuntForm() {
             </div>
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Member 3 (Optional)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">
+                Team Member 3 (Optional)
+              </h2>
               <div className="grid grid-cols-1 gap-5">
                 <FormInput
                   label="Name"
@@ -265,7 +276,9 @@ export default function TechTreasureHuntForm() {
             </div>
 
             <div>
-              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">Team Member 4 (Optional)</h2>
+              <h2 className="font-orbitron text-sm text-neon-red mb-3 tracking-wider">
+                Team Member 4 (Optional)
+              </h2>
               <div className="grid grid-cols-1 gap-5">
                 <FormInput
                   label="Name"
@@ -322,8 +335,18 @@ export default function TechTreasureHuntForm() {
               className="glow-btn-red px-5 py-3 rounded-xl font-orbitron text-xs text-neon-red tracking-wider inline-flex items-center gap-2"
             >
               JOIN GROUP
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h4m0 0v4m0-4L10 14" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7h4m0 0v4m0-4L10 14"
+                />
               </svg>
             </a>
           </motion.div>

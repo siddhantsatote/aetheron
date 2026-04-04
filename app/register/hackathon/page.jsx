@@ -189,7 +189,11 @@ export default function HackathonForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="cyan" title="Hackathon Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="cyan"
+            title="Hackathon Rules & Guidelines"
+          />
 
           {/* Form */}
           <motion.form
@@ -353,8 +357,18 @@ export default function HackathonForm() {
                 className="inline-flex items-center gap-2 text-xs font-orbitron tracking-wider text-neon-cyan hover:opacity-90 transition-opacity"
               >
                 VIEW PROBLEM STATEMENTS
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h4m0 0v4m0-4L10 14" />
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7h4m0 0v4m0-4L10 14"
+                  />
                 </svg>
               </a>
             </div>
@@ -394,7 +408,6 @@ export default function HackathonForm() {
               </GlowButton>
             </div>
           </motion.form>
-
         </div>
       </section>
     </div>

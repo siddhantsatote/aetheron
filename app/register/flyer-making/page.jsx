@@ -157,7 +157,11 @@ export default function FlyerMakingForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="violet" title="Event Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="violet"
+            title="Event Rules & Guidelines"
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -262,7 +266,6 @@ export default function FlyerMakingForm() {
               </GlowButton>
             </div>
           </motion.form>
-
         </div>
       </section>
     </div>

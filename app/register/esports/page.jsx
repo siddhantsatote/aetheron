@@ -43,7 +43,11 @@ export default function EsportsForm() {
     const { agree, ...data } = form;
     data.participation_type = "Squad";
     // Combine squad members into squad_igns for backend
-    data.squad_igns = [data.squad_member_1, data.squad_member_2, data.squad_member_3]
+    data.squad_igns = [
+      data.squad_member_1,
+      data.squad_member_2,
+      data.squad_member_3,
+    ]
       .filter(Boolean)
       .join(", ");
     delete data.squad_member_1;
@@ -181,7 +185,11 @@ export default function EsportsForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="amber" title="Tournament Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="amber"
+            title="Tournament Rules & Guidelines"
+          />
 
           {/* Form */}
           <motion.form

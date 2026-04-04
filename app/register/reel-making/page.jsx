@@ -10,7 +10,8 @@ import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function ReelMakingForm() {
-  const whatsappLink = "https://chat.whatsapp.com/Ela0hxUv4kx2KvDZUMa6l0?mode=gi_t";
+  const whatsappLink =
+    "https://chat.whatsapp.com/Ela0hxUv4kx2KvDZUMa6l0?mode=gi_t";
   const qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(whatsappLink)}`;
   const { submit, loading, success, error, fieldErrors } =
     useRegistration("reel-making");
@@ -164,7 +165,11 @@ export default function ReelMakingForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="rose" title="Event Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="rose"
+            title="Event Rules & Guidelines"
+          />
 
           <motion.form
             onSubmit={handleSubmit}
@@ -284,8 +289,18 @@ export default function ReelMakingForm() {
                 className="glow-btn-rose px-5 py-3 rounded-xl font-orbitron text-xs text-neon-rose tracking-wider inline-flex items-center gap-2"
               >
                 JOIN WHATSAPP GROUP
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h4m0 0v4m0-4L10 14" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7h4m0 0v4m0-4L10 14"
+                  />
                 </svg>
               </a>
             </div>

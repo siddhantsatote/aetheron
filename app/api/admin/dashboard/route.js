@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
-import {
-  ADMIN_COOKIE_NAME,
-  ADMIN_COOKIE_VALUE,
-} from "@/lib/adminAuth";
+import { ADMIN_COOKIE_NAME, ADMIN_COOKIE_VALUE } from "@/lib/adminAuth";
 
 function toCategory(label, rows) {
   return {

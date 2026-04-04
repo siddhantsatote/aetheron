@@ -55,7 +55,9 @@ export default function BlogWritingForm() {
 
     const url = driveLink.trim();
     if (!/^https?:\/\//i.test(url)) {
-      setDriveError("Please enter a valid URL starting with http:// or https://");
+      setDriveError(
+        "Please enter a valid URL starting with http:// or https://",
+      );
       return;
     }
 
@@ -71,7 +73,7 @@ export default function BlogWritingForm() {
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
         setDriveError(
-          errorData.message || "Failed to submit drive link. Please try again."
+          errorData.message || "Failed to submit drive link. Please try again.",
         );
         return;
       }
@@ -212,7 +214,11 @@ export default function BlogWritingForm() {
           </motion.div>
 
           {/* Rules Accordion */}
-          <RulesAccordion rules={rules} color="emerald" title="Event Rules & Guidelines" />
+          <RulesAccordion
+            rules={rules}
+            color="emerald"
+            title="Event Rules & Guidelines"
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -400,7 +406,6 @@ export default function BlogWritingForm() {
               </GlowButton>
             </div>
           </motion.form>
-
         </div>
       </section>
     </div>

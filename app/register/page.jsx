@@ -14,13 +14,25 @@ import {
   PuzzlePieceIcon,
 } from "@heroicons/react/24/outline";
 
-const LightbulbIcon = () => <LightBulbIcon className="w-12 h-12" strokeWidth={1.8} />;
-const CodeIcon = () => <CodeBracketIcon className="w-12 h-12" strokeWidth={1.8} />;
-const GamepadIcon = () => <DevicePhoneMobileIcon className="w-12 h-12" strokeWidth={1.8} />;
-const PencilIcon = () => <PencilSquareIcon className="w-12 h-12" strokeWidth={1.8} />;
+const LightbulbIcon = () => (
+  <LightBulbIcon className="w-12 h-12" strokeWidth={1.8} />
+);
+const CodeIcon = () => (
+  <CodeBracketIcon className="w-12 h-12" strokeWidth={1.8} />
+);
+const GamepadIcon = () => (
+  <DevicePhoneMobileIcon className="w-12 h-12" strokeWidth={1.8} />
+);
+const PencilIcon = () => (
+  <PencilSquareIcon className="w-12 h-12" strokeWidth={1.8} />
+);
 const FlyerIcon = () => <PhotoIcon className="w-12 h-12" strokeWidth={1.8} />;
-const VideoIcon = () => <VideoCameraIcon className="w-12 h-12" strokeWidth={1.8} />;
-const TreasureIcon = () => <PuzzlePieceIcon className="w-12 h-12" strokeWidth={1.8} />;
+const VideoIcon = () => (
+  <VideoCameraIcon className="w-12 h-12" strokeWidth={1.8} />
+);
+const TreasureIcon = () => (
+  <PuzzlePieceIcon className="w-12 h-12" strokeWidth={1.8} />
+);
 
 const events = [
   {
