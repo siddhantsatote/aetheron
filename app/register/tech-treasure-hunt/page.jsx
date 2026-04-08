@@ -10,6 +10,7 @@ import RulesAccordion from "@/components/RulesAccordion";
 import useRegistration from "@/hooks/useRegistration";
 
 export default function TechTreasureHuntForm() {
+  const registrationClosed = true;
   const whatsappLink =
     "https://chat.whatsapp.com/DJ6k8znu2cyCUgFqOrZOcv?mode=gi_t";
   const { submit, loading, success, error, fieldErrors } =
@@ -49,6 +50,34 @@ export default function TechTreasureHuntForm() {
     "Final Destination: First team to reach the final destination wins.",
     "Judging: Based on time taken, clue-solving efficiency, and teamwork.",
   ];
+
+  if (registrationClosed) {
+    return (
+      <div className="relative min-h-screen grid-pattern">
+        <ParticleBackground />
+        <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glassmorphism glow-border-red rounded-2xl p-8 sm:p-10 text-center max-w-xl"
+          >
+            <h1 className="font-orbitron text-2xl sm:text-3xl font-bold neon-red mb-4">
+              TECH TREASURE HUNT
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base mb-7">
+              Registration is now closed for this event.
+            </p>
+            <Link
+              href="/register"
+              className="glow-btn-red px-6 py-3 rounded-xl font-orbitron text-xs text-neon-red tracking-wider inline-block"
+            >
+              BACK TO EVENTS
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
 
   if (success) {
     return (
